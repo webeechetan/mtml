@@ -60,26 +60,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group mb-3">
-                                <label class="form-label" for="name">{{ translate('Caste') }}</label>
-                                <select name="caste_id" id="caste_id" class="form-control aiz-selectpicker" data-live-search="true" >
-                                    <option value="">{{translate('Select One')}}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group mb-3">
-                                <label class="form-label" for="name">{{ translate('Sub Caste') }}</label>
-                                <select name="sub_caste_id" id="sub_caste_id" class="form-control aiz-selectpicker" data-live-search="true">
-                                    <option value="">{{translate('Select One')}}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group mb-3">
