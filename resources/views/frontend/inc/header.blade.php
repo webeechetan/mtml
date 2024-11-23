@@ -81,7 +81,7 @@
                                                 @if ($chat->chatThread->$user_to_show->photo != null)
                                                 <img src="{{ uploaded_asset($chat->chatThread->$user_to_show->photo) }}">
                                                 @else
-                                                <img src="{{ static_asset('assets/img/avatar-place.png') }}">
+                                                <img src="{{ asset('assets/img/avatar-place.png') }}">
                                                 @endif
                                                 @if(Cache::has('user-is-online-' . $chat->chatThread->$user_to_show->id))
                                                 <span
@@ -126,7 +126,7 @@
                             <a href="{{ route('dashboard') }}" class="d-flex align-items-center text-reset">
                                 <img src="{{ uploaded_asset(Auth::user()->photo) }}"
                                     class="size-30px rounded-circle img-fit mr-2"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                 <span class="opacity-60 mr-1">
                                     {{ translate('Hi') }},
                                 </span>
@@ -164,7 +164,7 @@
                             <img src="{{ uploaded_asset(get_setting('header_logo')) }}" alt="{{ env('APP_NAME') }}"
                                 class="mw-100 h-30px h-md-40px" height="40">
                             @else
-                            <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
+                            <img src="{{ asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
                                 class="mw-100 h-30px h-md-40px" height="40">
                             @endif
                         </a>

@@ -33,7 +33,7 @@
                                         @if(uploaded_asset($interested_by->photo) != null)
                                             <img class="img-md" src="{{ uploaded_asset($interested_by->photo) }}" height="45px"  alt="{{translate('photo')}}">
                                         @else
-                                            <img class="img-md" src="{{ static_asset('assets/img/avatar-place.png') }}" height="45px"  alt="{{translate('photo')}}">
+                                            <img class="img-md" src="{{ asset('assets/img/avatar-place.png') }}" height="45px"  alt="{{translate('photo')}}">
                                         @endif
                                     </a>
                                 </td>

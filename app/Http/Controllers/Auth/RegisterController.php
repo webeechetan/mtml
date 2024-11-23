@@ -203,7 +203,7 @@ class RegisterController extends Controller
             if (get_setting('email_verification') != 1) {
                 $user->email_verified_at = date('Y-m-d H:m:s');
                 $user->save();
-                flash(translate('Registration successfull.'))->success();
+                flash(translate('Registration successfull. We will notify you once your account get verified'))->success();
             } else {
                 event(new Registered($user));
                 flash(translate('Registration successfull. Please verify your email.'))->success();

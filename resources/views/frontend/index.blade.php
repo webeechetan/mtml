@@ -30,7 +30,7 @@
                                     </div>
                                     <form class="form-default" id="reg-form" role="form"
                                         action="{{ route('register') }}" method="POST">
-                                        @csrf
+                                        @csrf 
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group mb-3">

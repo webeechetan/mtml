@@ -165,7 +165,7 @@ $lang = \App\Models\Language::where('code', $locale)->first();
 </head>
 
 <body class="text-left">
-
+    
     <div
         class="aiz-main-wrapper d-flex flex-column position-relative @if (Route::currentRouteName() != 'home') pt-8 pt-lg-10 @endif bg-white">
 
@@ -344,6 +344,13 @@ $lang = \App\Models\Language::where('code', $locale)->first();
     @endif
 
     {!! get_setting('footer_script') !!}
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+        
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 

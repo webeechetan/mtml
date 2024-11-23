@@ -72,7 +72,7 @@
                                                 @if(!empty(uploaded_asset($user_data->photo)))
                                                     <img src="{{ uploaded_asset($user_data->photo) }}">
                                                 @else
-                                                    <img src="{{ static_asset('assets/img/avatar-place.png') }}">
+                                                    <img src="{{ asset('assets/img/avatar-place.png') }}">
                                                 @endif
                                             </span>
                                             <div class="media-body">
@@ -119,7 +119,7 @@
                 <div class="align-items-stretch d-flex dropdown " id="lang-change">
                     <a class="dropdown-toggle no-arrow" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="false" aria-expanded="false">
                         <span class="btn btn-icon">
-                            <img src="{{ static_asset('assets/img/flags/'.$locale.'.png') }}" height="11">
+                            <img src="{{ asset('assets/img/flags/'.$locale.'.png') }}" height="11">
                         </span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-xs">
@@ -127,7 +127,7 @@
                         @foreach (\App\Models\Language::all() as $key => $language)
                             <li>
                                 <a href="javascript:void(0)" data-flag="{{ $language->code }}" class="dropdown-item @if($locale == $language->code) active @endif">
-                                    <img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" class="mr-2">
+                                    <img src="{{ asset('assets/img/flags/'.$language->code.'.png') }}" class="mr-2">
                                     <span class="language">{{ $language->name }}</span>
                                 </a>
                             </li>
@@ -140,7 +140,7 @@
                     <a class="dropdown-toggle no-arrow text-dark" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="false" aria-expanded="false">
                         <span class="d-flex align-items-center">
                             <span class="mr-md-2">
-                                <img src="{{ uploaded_asset(Auth::user()->photo) }}" class="size-35px rounded-circle img-fit" height="36" width="36" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                <img src="{{ uploaded_asset(Auth::user()->photo) }}" class="size-35px rounded-circle img-fit" height="36" width="36" onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                             </span>
                             <span class="d-none d-md-block">
                                 <span class="d-block fw-500">{{Auth::user()->first_name.' '.Auth::user()->last_name}}</span>

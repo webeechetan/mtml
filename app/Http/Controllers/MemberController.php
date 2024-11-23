@@ -105,7 +105,7 @@ class MemberController extends Controller
         return view('admin.members.create');
     }
 
-    /**
+    /** 
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

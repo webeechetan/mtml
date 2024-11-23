@@ -27,7 +27,7 @@
                                         <div class="mb-2 file-preview-item" title="{{ $attachment->file_name }}">
                                             <a href="{{ route('download_attachment', $attachment->id) }}" target="_blank" class="d-block">
                                                 <div class="thumb">
-                                                    <img src="{{ static_asset($attachment->file_name) }}" class="img-fit">
+                                                    <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                                 </div>
                                                 <div class="body">
                                                     <h6 class="d-flex">
@@ -100,7 +100,7 @@
                                         <div class="mb-2 file-preview-item" title="{{ $attachment->file_name }}">
                                             <a href="{{ route('download_attachment', $attachment->id) }}" target="_blank" class="d-block">
                                                 <div class="thumb">
-                                                    <img src="{{ static_asset($attachment->file_name) }}" class="img-fit">
+                                                    <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                                 </div>
                                                 <div class="body">
                                                     <h6 class="d-flex">

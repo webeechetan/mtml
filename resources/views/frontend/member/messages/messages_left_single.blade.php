@@ -6,7 +6,7 @@
                     @if ($chat->sender->photo != null)
                     <img src="{{ uploaded_asset($chat->sender->photo) }}">
                     @else
-                    <img src="{{ static_asset('assets/frontend/default/img/avatar-place.png') }}">
+                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                     @endif
                 </span>
                 <div class="media-body">
@@ -33,7 +33,7 @@
                                     <div class="mb-2 file-preview-item" title="{{ $attachment->file_name }}">
                                         <a href="{{ route('download_attachment', $attachment->id) }}" target="_blank" class="d-block">
                                             <div class="thumb">
-                                                <img src="{{ static_asset($attachment->file_name) }}" class="img-fit">
+                                                <img src="{{ asset($attachment->file_name) }}" class="img-fit">
                                             </div>
                                             <div class="body">
                                                 <h6 class="d-flex">

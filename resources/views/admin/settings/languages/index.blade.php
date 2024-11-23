@@ -120,7 +120,7 @@
                         <div class="col-lg-10">
                             <select class="form-control aiz-selectpicker mb-2 mb-md-0" name="code" data-live-search="true" >
                                 @foreach(\File::files(base_path('public/assets/img/flags')) as $path)
-                                    <option value="{{ pathinfo($path)['filename'] }}" data-content="<div class=''><img src='{{ static_asset('assets/img/flags/'.pathinfo($path)['filename'].'.png') }}' class='mr-2'><span>{{ strtoupper(pathinfo($path)['filename']) }}</span></div>"></option>
+                                    <option value="{{ pathinfo($path)['filename'] }}" data-content="<div class=''><img src='{{ asset('assets/img/flags/'.pathinfo($path)['filename'].'.png') }}' class='mr-2'><span>{{ strtoupper(pathinfo($path)['filename']) }}</span></div>"></option>
                                 @endforeach
                             </select>
                         </div>

@@ -132,9 +132,9 @@
                                       @if ($profile_picture_show)
                                       src="{{ uploaded_asset($similar_profile->user->photo) }}"
                                       @else
-                                      src="{{ static_asset($avatar_image) }}"
+                                      src="{{ asset($avatar_image) }}"
                                       @endif
-                                      onerror="this.onerror=null;this.src='{{ static_asset($avatar_image) }}';"
+                                      onerror="this.onerror=null;this.src='{{ asset($avatar_image) }}';"
                                       class="img-fit w-100 size-100px"
                                   >
                                 </div>

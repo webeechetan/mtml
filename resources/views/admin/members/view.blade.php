@@ -15,7 +15,7 @@
             <div class="card-body text-center">
                 <span class="avatar avatar-xl m-3 center">
                     @if(!uploaded_asset($member->photo))
-                        <img src="{{ static_asset('assets/img/avatar-place.png')}}">
+                        <img src="{{ asset('assets/img/avatar-place.png')}}">
                     @else
                         <img src="{{ uploaded_asset($member->photo) }}">
                     @endif

@@ -22,7 +22,7 @@
                 @if ($happy_story->photos != null)
                     @foreach (explode(',',$happy_story->photos) as $key => $photo)
                         <div class="carousel-box">
-                            <img class="d-block w-100 lazyload rounded h-200px h-lg-380px img-fit" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($photo) }}" alt="{{ $key }} offer">
+                            <img class="d-block w-100 lazyload rounded h-200px h-lg-380px img-fit" src="{{ asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($photo) }}" alt="{{ $key }} offer">
                         </div>
                     @endforeach
                 @endif

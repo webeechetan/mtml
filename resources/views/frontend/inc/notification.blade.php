@@ -26,9 +26,9 @@
                             @if ($profile_picture_show)
                             src="{{ uploaded_asset($user_data->photo) }}"
                             @else
-                            src="{{ static_asset($avatar_image) }}"
+                            src="{{ asset($avatar_image) }}"
                             @endif
-                            onerror="this.onerror=null;this.src='{{ static_asset($avatar_image) }}';"
+                            onerror="this.onerror=null;this.src='{{ asset($avatar_image) }}';"
                         >
                     </span>
                     <div class="media-body">

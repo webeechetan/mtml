@@ -61,6 +61,7 @@ class CareerController extends Controller
          $career->company     = $request->company;
          $career->start       = $request->career_start;
          $career->end         = $request->career_end;
+         $career->salary      = $request->salary;
 
          if($career->save()){
              flash(translate('Career Info has been added successfully'))->success();
@@ -117,6 +118,8 @@ class CareerController extends Controller
          $career->company     = $request->company;
          $career->start       = $request->career_start;
          $career->end         = $request->career_end;
+         $career->salary      = $request->salary;
+
 
          if($career->save()){
              flash(translate('Career Info has been updated successfully'))->success();

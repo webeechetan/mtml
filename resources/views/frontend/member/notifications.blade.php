@@ -51,7 +51,7 @@
                                             @if ($profile_picture_show || $user->user_type == 'admin')
                                             src="{{ uploaded_asset($user->photo) }}"
                                             @else
-                                            src="{{ static_asset($avatar_image) }}"
+                                            src="{{ asset($avatar_image) }}"
                                             @endif
                                         >
                                     </span>

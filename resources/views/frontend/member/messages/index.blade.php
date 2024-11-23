@@ -27,7 +27,7 @@
                                           @if ($single_chat_thread->$user_to_show->photo != null)
                                           <img src="{{ uploaded_asset($single_chat_thread->$user_to_show->photo) }}">
                                           @else
-                                          <img src="{{ static_asset('assets/frontend/default/img/avatar-place.png') }}">
+                                          <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                                           @endif
 
                                           @if(Cache::has('user-is-online-' . $single_chat_thread->$user_to_show->id))

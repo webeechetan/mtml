@@ -37,7 +37,7 @@
                                                       @if(!empty(uploaded_asset($user_data->photo)))
                                                           <img src="{{ uploaded_asset($user_data->photo) }}">
                                                       @else
-                                                          <img src="{{ static_asset('assets/img/avatar-place.png') }}">
+                                                          <img src="{{ asset('assets/img/avatar-place.png') }}">
                                                       @endif
                                                   </span>
                                                   <div class="media-body">

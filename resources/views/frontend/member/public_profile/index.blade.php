@@ -140,9 +140,9 @@
                                 @if ($profile_picture_show)
                                 src="{{ uploaded_asset($user->photo) }}"
                                 @else
-                                src="{{ static_asset($avatar_image) }}"
+                                src="{{ asset($avatar_image) }}"
                                 @endif
-                                onerror="this.onerror=null;this.src='{{ static_asset($avatar_image) }}';"
+                                onerror="this.onerror=null;this.src='{{ asset($avatar_image) }}';"
                                 class="img-fluid w-100"
                             >
                             @if(!$profile_picture_show)
@@ -252,9 +252,9 @@
                                                     @if ($profile_picture_show)
                                                     src="{{ uploaded_asset($similar_profile->user->photo) }}"
                                                     @else
-                                                    src="{{ static_asset($avatar_image) }}"
+                                                    src="{{ asset($avatar_image) }}"
                                                     @endif
-                                                    onerror="this.onerror=null;this.src='{{ static_asset($avatar_image) }}';"
+                                                    onerror="this.onerror=null;this.src='{{ asset($avatar_image) }}';"
                                                     class="img-fit w-100 size-120px">
                                             </div>
                                             <div class="col">
@@ -314,9 +314,9 @@
                         @if ($profile_picture_show)
                         src="{{ uploaded_asset($user->photo) }}"
                         @else
-                        src="{{ static_asset($avatar_image) }}"
+                        src="{{ asset($avatar_image) }}"
                         @endif
-                        onerror="this.onerror=null;this.src='{{ static_asset($avatar_image) }}';"
+                        onerror="this.onerror=null;this.src='{{ asset($avatar_image) }}';"
                         class="img-fluid w-100"
                     >
                     @if(!$profile_picture_show)
@@ -1879,7 +1879,7 @@
                                             </a>
                                         </div>
                                     @else
-                                        <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" class="card-img"
+                                        <img src="{{ asset('assets/img/placeholder-rect.jpg') }}" class="card-img"
                                             alt="{{ translate('photo') }}">
                                         <div class="absolute-full d-flex justify-content-center align-items-center bg-soft-dark text-white"><i class="las la-lock la-3x"></i></div>
                                     @endif

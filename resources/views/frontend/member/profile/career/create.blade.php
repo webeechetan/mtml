@@ -31,6 +31,12 @@
                 <input type="number" name="career_end"  placeholder="{{ translate('End') }}" class="form-control">
             </div>
         </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label">{{translate('Salary')}}</label>
+            <div class="col-md-9">
+                <input type="text" name="salary"  placeholder="{{ translate('Salary') }}" class="form-control">
+            </div>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">{{translate('Close')}}</button>

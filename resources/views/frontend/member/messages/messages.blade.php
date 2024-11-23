@@ -14,7 +14,7 @@
                 @if ($chat_thread->$user_to_show->photo != null)
                     <img src="{{ uploaded_asset($chat_thread->$user_to_show->photo) }}">
                 @else
-                    <img src="{{ static_asset('assets/frontend/default/img/avatar-place.png') }}">
+                    <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                 @endif
             </span>
             <div class="media-body">
@@ -70,7 +70,7 @@
                         @if ($chat_thread->$user_to_show->photo != null)
                             <img src="{{ uploaded_asset($chat_thread->$user_to_show->photo) }}">
                         @else
-                            <img src="{{ static_asset('assets/frontend/default/img/avatar-place.png') }}">
+                            <img src="{{ asset('assets/frontend/default/img/avatar-place.png') }}">
                         @endif
                     </span>
                     <h4 class="h5 mb-2 fw-600">{{ $chat_thread->$user_to_show->first_name.' '.$chat_thread->$user_to_show->last_name }}</h4>

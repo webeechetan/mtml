@@ -41,9 +41,9 @@
                                             @if (show_profile_picture($gallery_image_view_requester))
                                             src="{{ uploaded_asset($gallery_image_view_requester->photo) }}"
                                             @else
-                                            src="{{ static_asset($avatar_image) }}"
+                                            src="{{ asset($avatar_image) }}"
                                             @endif
-                                            onerror="this.onerror=null;this.src='{{ static_asset($avatar_image) }}';"
+                                            onerror="this.onerror=null;this.src='{{ asset($avatar_image) }}';"
                                             class="img-md" height="45px"
                                         >
                                     </a>

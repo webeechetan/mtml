@@ -15,6 +15,7 @@
               <th>{{translate('company')}}</th>
               <th data-breakpoints="md">{{translate('Start')}}</th>
               <th data-breakpoints="md">{{translate('End')}}</th>
+              <th data-breakpoints="md">{{translate('Income')}}</th>
               <th data-breakpoints="md">{{translate('Status')}}</th>
               <th data-breakpoints="md" class="text-right">{{translate('Options')}}</th>
           </tr>
@@ -26,6 +27,7 @@
               <td>{{ $career->company }}</td>
               <td>{{ $career->start }}</td>
               <td>{{ $career->end }}</td>
+              <td>{{ $career->salary }}</td>
               <td>
                   <label class="aiz-switch aiz-switch-success mb-0">
                       <input type="checkbox" id="status.{{ $key }}" onchange="update_career_present_status(this)" value="{{ $career->id }}" @if($career->present == 1) checked @endif data-switch="success"/>

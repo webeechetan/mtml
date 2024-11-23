@@ -32,7 +32,7 @@
                 @if ($happy_story->photos != null)
                     @foreach (explode(',',$happy_story->photos) as $key => $photo)
                         <div class="carousel-box">
-                            <img class="d-block lazyload img-fluid mx-auto" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($photo) }}" alt="{{ $happy_story->title }}">
+                            <img class="d-block lazyload img-fluid mx-auto" src="{{ asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($photo) }}" alt="{{ $happy_story->title }}">
                         </div>
                     @endforeach
                 @endif

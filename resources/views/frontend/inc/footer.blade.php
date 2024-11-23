@@ -8,7 +8,7 @@
                         @if(get_setting('footer_logo') != null)
                             <img src="{{ uploaded_asset(get_setting('footer_logo')) }}" alt="{{ env('APP_NAME') }}" class="mw-100 h-30px h-md-40px" height="40">
                         @else
-                            <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" class="mw-100 h-30px h-md-40px" height="40">
+                            <img src="{{ asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" class="mw-100 h-30px h-md-40px" height="40">
                         @endif
                     </a>
                 </div>
@@ -218,7 +218,7 @@
                 <div class="col">
                     <a href="javascript:void(0)" class="text-reset d-block flex-grow-1 text-center py-2 mobile-side-nav-thumb" data-toggle="class-toggle" data-target=".aiz-mobile-side-nav">
                         <span class="d-block mx-auto mb-1 opacity-60">
-                            <img src="{{ uploaded_asset(Auth::user()->photo)}}" class="rounded-circle size-20px" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                            <img src="{{ uploaded_asset(Auth::user()->photo)}}" class="rounded-circle size-20px" onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                         </span>
                         <span class="d-block fs-10 opacity-60">{{ translate('Account') }}</span>
                     </a>
@@ -227,7 +227,7 @@
                 <div class="col">
                     <a href="{{ route('admin.dashboard') }}" class="text-reset d-block flex-grow-1 text-center py-2">
                         <span class="d-block mx-auto mb-1 opacity-60">
-                            <img src="{{ uploaded_asset(Auth::user()->photo)}}" class="rounded-circle size-20px" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                            <img src="{{ uploaded_asset(Auth::user()->photo)}}" class="rounded-circle size-20px" onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                         </span>
                         <span class="d-block fs-10 opacity-60">{{ translate('Account') }}</span>
                     </a>
@@ -237,7 +237,7 @@
             <div class="col">
                 <a href="{{ route('login') }}" class="text-reset d-block flex-grow-1 text-center py-2">
                     <span class="d-block mx-auto mb-1 opacity-60 {{ areActiveRoutes(['login'],'opacity-100')}}">
-                        <img src="{{ static_asset('assets/img/avatar-place.png') }}" class="rounded-circle size-20px">
+                        <img src="{{ asset('assets/img/avatar-place.png') }}" class="rounded-circle size-20px">
                     </span>
                     <span class="d-block fs-10 opacity-60 {{ areActiveRoutes(['login'],'opacity-100 fw-600')}}">{{ translate('Account') }}</span>
                 </a>
