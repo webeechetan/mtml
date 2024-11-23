@@ -830,6 +830,7 @@
                                                     <th>{{ translate('company') }}</th>
                                                     <th>{{ translate('Start') }}</th>
                                                     <th>{{ translate('End') }}</th>
+                                                    <th>{{ translate('Income (Yearly)') }}</th>
                                                     <th>{{ translate('Status') }}</th>
                                                 </tr>
                                                 @php $careers = \App\Models\Career::where('user_id', $user->id)->get(); @endphp
@@ -839,6 +840,7 @@
                                                         <td>{{ $career->company }}</td>
                                                         <td>{{ $career->start }}</td>
                                                         <td>{{ $career->end }}</td>
+                                                        <td>{{ $career->salary }}</td>
                                                         <td>
                                                             @if ($career->present == 1)
                                                                 <span
@@ -1351,24 +1353,24 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <th class="py-1">{{ translate('Sub Caste') }}
+                                                                <th class="py-1">{{ translate('Community') }}
                                                                 </th>
                                                                 <td class="py-1">
-                                                                    {{ !empty($user->spiritual_backgrounds->sub_caste->name) ? $user->spiritual_backgrounds->sub_caste->name : '' }}
+                                                                    {{ !empty($user->spiritual_backgrounds->community) ? $user->spiritual_backgrounds->community : '' }}
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <th class="py-1">
-                                                                    {{ translate('Personal Value') }}</th>
+                                                                    {{ translate('Block') }}</th>
                                                                 <td class="py-1">
-                                                                    {{ !empty($user->spiritual_backgrounds->personal_value) ? $user->spiritual_backgrounds->personal_value : '' }}
+                                                                    {{ !empty($user->spiritual_backgrounds->block) ? $user->spiritual_backgrounds->block : '' }}
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <th class="py-1">
-                                                                    {{ translate('Community Value') }}</th>
+                                                                    {{ translate('Patti') }}</th>
                                                                 <td class="py-1">
-                                                                    {{ !empty($user->spiritual_backgrounds->community_value) ? $user->spiritual_backgrounds->community_value : '' }}
+                                                                    {{ !empty($user->spiritual_backgrounds->patti) ? $user->spiritual_backgrounds->patti : '' }}
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -1378,25 +1380,19 @@
                                                     <table class="w-100 ml-sm-4">
                                                         <tbody>
                                                             <tr>
-                                                                <th class="py-1">{{ translate('Caste') }}</th>
+                                                                <th class="py-1">{{ translate('Gaon') }}</th>
                                                                 <td class="py-1">
-                                                                    {{ !empty($user->spiritual_backgrounds->caste->name) ? $user->spiritual_backgrounds->caste->name : '' }}
+                                                                    {{ !empty($user->spiritual_backgrounds->gaon) ? $user->spiritual_backgrounds->gaon : '' }}
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <th class="py-1">{{ translate('Ethnicity') }}
+                                                                <th class="py-1">{{ translate('Khandan') }}
                                                                 </th>
                                                                 <td class="py-1">
-                                                                    {{ !empty($user->spiritual_backgrounds->ethnicity) ? $user->spiritual_backgrounds->ethnicity : '' }}
+                                                                    {{ !empty($user->spiritual_backgrounds->khandan) ? $user->spiritual_backgrounds->khandan : '' }}
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <th class="py-1">
-                                                                    {{ translate('Family Value') }}</th>
-                                                                <td class="py-1">
-                                                                    {{ !empty($user->spiritual_backgrounds->family_value->name) ? $user->spiritual_backgrounds->family_value->name : '' }}
-                                                                </td>
-                                                            </tr>
+                                                            
                                                         </tbody>
                                                     </table>
                                                 </div>

@@ -85,23 +85,16 @@
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <label for="partner_caste_id">{{translate('Caste')}}</label>
-                    <select class="form-control aiz-selectpicker" name="partner_caste_id" id="partner_caste_id" data-live-search="true">
-
-                    </select>
-                    @error('partner_caste_id')
+                    <label for="partner_body_type">{{translate('Body Type')}}</label>
+                    <input type="text" name="partner_body_type" value="{{ !empty($member->partner_expectations->body_type) ? $member->partner_expectations->body_type : "" }}" class="form-control" placeholder="{{translate('Body Type')}}">
+                    @error('partner_body_type')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
                 </div>
             </div>
 
             <div class="form-group row">
-                <div class="col-md-6">
-                    <label for="partner_sub_caste_id">{{translate('Sub Caste')}}</label>
-                    <select class="form-control aiz-selectpicker" name="partner_sub_caste_id" id="partner_sub_caste_id" data-live-search="true">
-
-                    </select>
-                </div>
+                
                 <div class="col-md-6">
                     <label for="language_id">{{translate('Language')}}</label>
                     @php $partner_language = !empty($member->partner_expectations->language_id) ? $member->partner_expectations->language_id : ""; @endphp
@@ -112,6 +105,14 @@
                         @endforeach
                     </select>
                     @error('language_id')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="col-md-6">
+                    <label for="pertner_complexion">{{translate('Complexion')}}</label>
+                    <input type="text" name="pertner_complexion" value="{{ !empty($member->partner_expectations->complexion) ? $member->partner_expectations->complexion : "" }}" class="form-control" placeholder="{{translate('Complexion')}}" required>
+                    @error('pertner_complexion')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
                 </div>
@@ -164,28 +165,6 @@
 
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label for="partner_diet">{{translate('Dieting Acceptable')}}</label>
-                    @php $partner_dieting_acceptable = !empty($member->partner_expectations->diet) ? $member->partner_expectations->diet : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="partner_diet" required>
-                        <option value="yes" @if($partner_dieting_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
-                        <option value="no" @if($partner_dieting_acceptable ==  'no') selected @endif >{{translate('No')}}</option>
-                        <option value="dose_not_matter" @if($partner_dieting_acceptable ==  'dose_not_matter') selected @endif >{{translate('Dose not matter')}}</option>
-                    </select>
-                    @error('partner_diet')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="col-md-6">
-                    <label for="partner_body_type">{{translate('Body Type')}}</label>
-                    <input type="text" name="partner_body_type" value="{{ !empty($member->partner_expectations->body_type) ? $member->partner_expectations->body_type : "" }}" class="form-control" placeholder="{{translate('Body Type')}}">
-                    @error('partner_body_type')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-md-6">
                     <label for="partner_personal_value">{{translate('Personal Value')}}</label>
                     <input type="text" name="partner_personal_value" value="{{ !empty($member->partner_expectations->personal_value) ? $member->partner_expectations->personal_value : "" }}" class="form-control" placeholder="{{translate('Personal Value')}}">
                     @error('partner_personal_value')
@@ -225,28 +204,6 @@
 
                     </select>
                     @error('partner_state_id')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label for="family_value_id">{{translate('Family Value')}}</label>
-                    <select class="form-control aiz-selectpicker" name="family_value_id" >
-                        <option value="">{{translate('Select One')}}</option>
-                        @foreach ($family_values as $family_value)
-                            <option value="{{$family_value->id}}" @if($family_value->id == !empty($member->partner_expectations->family_value_id) ? $member->partner_expectations->family_value_id : "") selected @endif> {{ $family_value->name }} </option>
-                        @endforeach
-                    </select>
-                    @error('family_value_id')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="col-md-6">
-                    <label for="pertner_complexion">{{translate('Complexion')}}</label>
-                    <input type="text" name="pertner_complexion" value="{{ !empty($member->partner_expectations->complexion) ? $member->partner_expectations->complexion : "" }}" class="form-control" placeholder="{{translate('Complexion')}}" required>
-                    @error('pertner_complexion')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
                 </div>

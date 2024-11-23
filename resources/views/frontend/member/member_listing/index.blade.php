@@ -76,10 +76,10 @@
                                                             {{ $user->spiritual_backgrounds->religion->name }}
                                                         @endif
                                                     </td>
-                                                    <td class="py-1"><span>{{ translate('Caste') }}</span></td>
+                                                    <td class="py-1"><span>{{ translate('Community') }}</span></td>
                                                     <td class="py-1 fw-400">
-                                                        @if (!empty($user->spiritual_backgrounds->caste_id))
-                                                            {{ $user->spiritual_backgrounds->caste->name }}
+                                                        @if (!empty($user->spiritual_backgrounds->community))
+                                                            {{ $user->spiritual_backgrounds->community }}
                                                         @endif
                                                     </td>
                                                 </tr>

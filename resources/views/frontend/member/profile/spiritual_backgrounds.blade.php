@@ -10,7 +10,7 @@
           <div class="form-group row">
               <div class="col-md-6">
                   <label for="member_religion_id">{{translate('Religion')}}</label>
-                  <select class="form-control aiz-selectpicker" name="member_religion_id" id="member_religion_id" data-live-search="true" required>
+                  <select class="form-control aiz-selectpicker" name="member_religion_id" id="member_religion_id" data-live-search="true" >
                       <option value="">{{translate('Select One')}}</option>
                       @foreach ($religions as $religion)
                           <option value="{{$religion->id}}" @if($religion->id == $member_religion_id) selected @endif> {{ $religion->name }} </option>
@@ -21,56 +21,111 @@
                   @enderror
               </div>
               <div class="col-md-6">
-                  <label for="member_caste_id">{{translate('Caste')}}</label>
-                  <select class="form-control aiz-selectpicker" name="member_caste_id" id="member_caste_id" data-live-search="true" required>
-
+                  <label for="community">{{translate('Community')}}</label>
+                  <select class="form-control aiz-selectpicker" name="community" id="community" data-live-search="true" >
+                        <option value="">{{translate('Select One')}}</option>
+                        <option value="Jounsari"
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Jounsari")
+                            selected
+                        @endif
+                        >Jounsari</option>
+                        <option value="Bawar"
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Bawar")
+                            selected
+                        @endif
+                        >Bawar</option>
+                        <option value="Jonpuri"
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Jonpuri")
+                            selected
+                        @endif
+                        >Jonpuri</option>
+                        <option value="Himachali"
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Himachali")
+                            selected
+                        @endif
+                        >Himachali</option>
+                        <option value="Garhwali"
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Garhwali")
+                            selected
+                        @endif
+                        >Garhwali</option>
+                        <option value="kumoani"
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "kumoani")
+                            selected
+                        @endif
+                        >kumoani</option>
+                        <option value="Other"
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Other")
+                            selected
+                        @endif
+                        >Other</option>
                   </select>
-                  @error('member_caste_id')
+                  @error('community')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
               </div>
           </div>
           <div class="form-group row">
               <div class="col-md-6">
-                  <label for="member_sub_caste_id">{{translate('Sub Caste')}}</label>
-                  <select class="form-control aiz-selectpicker" name="member_sub_caste_id" id="member_sub_caste_id" data-live-search="true">
-
+                  <label for="block">{{translate('block')}}</label>
+                  <select class="form-control aiz-selectpicker" name="block" id="block" data-live-search="true">
+                    <option value="">
+                        {{translate('Select One')}}
+                    </option>
+                    <option value="Kalsi"
+                    @if(!empty($member->spiritual_backgrounds->block) && $member->spiritual_backgrounds->block == "Kalsi")
+                        selected
+                    @endif
+                    >Kalsi</option>
+                    <option value="Chakrata"
+                    @if(!empty($member->spiritual_backgrounds->block) && $member->spiritual_backgrounds->block == "Chakrata")
+                        selected
+                    @endif
+                    >Chakrata</option>
+                    <option value="Other"
+                    @if(!empty($member->spiritual_backgrounds->block) && $member->spiritual_backgrounds->block == "Other")
+                        selected
+                    @endif
+                    >Other</option>
                   </select>
               </div>
               <div class="col-md-6">
-                  <label for="ethnicity">{{translate('Ethnicity')}}</label>
-                  <input type="text" name="ethnicity" value="{{!empty($member->spiritual_backgrounds->ethnicity) ? $member->spiritual_backgrounds->ethnicity : "" }}" class="form-control" placeholder="{{translate('Ethnicity')}}">
-                  @error('ethnicity')
-                      <small class="form-text text-danger">{{ $message }}</small>
-                  @enderror
-              </div>
+                <label for="Patti">{{translate('Patti')}}</label>
+                <select class="form-control aiz-selectpicker" name="patti" id="patti" data-live-search="true">
+                  <option value="">
+                      {{translate('Select One')}}
+                  </option>
+                  @php
+                    $patti = ['Koru', 'Seli', 'Samalta', 'Bamtad', 'Maletha', 'Athgaon', 'Bantad', 'Bamtad',
+                            'Silgaon', 'Vishail', 'Pashgaon', 'Chandau', 'Udpalta', 'Siligothan', 'Bheladh', 'Lakhwad',
+                            'Siligothan', 'Fartad', 'Bharam', 'Magthadh', 'Ghanau', 'Mohana', 'Kaili', 'Bondar', 'Chhultad',
+                            'Bhondar', 'Taplad', 'Bislad', 'Dwar', 'Babar', 'Babar', 'Devdhar', 'Silgaon Babar', 'Other'];
+                  @endphp
+                    @foreach ($patti as $patti)
+                        <option value="{{$patti}}"
+                        @if(!empty($member->spiritual_backgrounds->patti) && $member->spiritual_backgrounds->patti == $patti)
+                            selected
+                        @endif
+                        >{{$patti}}</option>
+                    @endforeach
+                </select>
+            </div>
           </div>
           <div class="form-group row">
               <div class="col-md-6">
-                  <label for="personal_value">{{translate('Personal Value')}}</label>
-                  <input type="text" name="personal_value" value="{{!empty($member->spiritual_backgrounds->personal_value) ? $member->spiritual_backgrounds->personal_value : "" }}" class="form-control" placeholder="{{translate('Personal Value')}}">
-                  @error('personal_value')
+                  <label for="Your Gaon">{{translate('Your Gaon')}}</label>
+                  <input type="text" name="gaon" value="{{!empty($member->spiritual_backgrounds->gaon) ? $member->spiritual_backgrounds->gaon : "" }}" class="form-control" placeholder="{{translate('gaon')}}">
+                  @error('gaon')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
               </div>
               <div class="col-md-6">
-                  <label for="family_value_id">{{translate('Family Value')}}</label>
-                  <select class="form-control aiz-selectpicker" name="family_value_id" data-live-search="true">
-                      <option value="">{{translate('Select One')}}</option>
-                      @foreach ($family_values as $family_value)
-                          <option value="{{$family_value->id}}" @if($religion->id == !empty($member->spiritual_backgrounds->ethnicity) ? $member->spiritual_backgrounds->ethnicity : "" ) selected @endif> {{ $family_value->name }}</option>
-                      @endforeach
-                  </select>
-              </div>
-          </div>
-          <div class="form-group row">
-              <div class="col-md-6">
-                  <label for="community_value">{{translate('Community Value')}}</label>
-                  <input type="text" name="community_value" value="{{!empty($member->spiritual_backgrounds->community_value) ? $member->spiritual_backgrounds->community_value : "" }}" class="form-control" placeholder="{{translate('Community Value')}}">
-                  @error('community_value')
-                      <small class="form-text text-danger">{{ $message }}</small>
-                  @enderror
-              </div>
+                <label for="Khandan/Parivaar">{{translate('Khandan/Parivaar Name')}}</label>
+                <input type="text" name="khandan" value="{{!empty($member->spiritual_backgrounds->khandan) ? $member->spiritual_backgrounds->khandan : "" }}" class="form-control" placeholder="{{translate('khandan')}}">
+                @error('khandan')
+                    <small class="form-text text-danger">{{ $message }}</small>
+                @enderror
+            </div>
           </div>
           <div class="text-right">
               <button type="submit" class="btn btn-primary btn-sm">{{translate('Update')}}</button>
