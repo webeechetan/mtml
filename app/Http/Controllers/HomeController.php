@@ -162,6 +162,8 @@ class HomeController extends Controller
     {
         $age_from       = ($request->age_from != null) ? $request->age_from : null;
         $age_to         = ($request->age_to != null) ? $request->age_to : null;
+        $community    = ($request->community != null) ? $request->community : null;
+        $block       = ($request->block != null) ? $request->block : null;
         $member_code    = ($request->member_code != null) ? $request->member_code : null;
         $matital_status = ($request->marital_status != null) ? $request->marital_status : null;
         $religion_id    = ($request->religion_id != null) ? $request->religion_id : null;
@@ -231,7 +233,21 @@ class HomeController extends Controller
         if (!empty($member_code)) {
             $users = $users->where('code', $member_code);
         }
-
+    
+    // Search by Community
+        if ($community != null) {
+            $user_ids = Member::where('community', $community)->pluck('user_id')->toArray();
+            if (count($user_ids) > 0) {
+                $users = $users->WhereIn('id', $user_ids);
+            }
+        }
+        // Search by block
+        if ($block != null) {
+            $user_ids = Member::where('block', $block)->pluck('user_id')->toArray();
+            if (count($user_ids) > 0) {
+                $users = $users->WhereIn('id', $user_ids);
+            }
+        }
         // Sort by Matital Status
         if ($matital_status != null) {
             $user_ids = Member::where('marital_status_id', $matital_status)->pluck('user_id')->toArray();

@@ -24,6 +24,40 @@
                           </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="name">{{ translate('Community') }}</label>
+                                <select class="form-control aiz-selectpicker" name="community" data-live-search="true">
+                                    <option value="">{{translate('Select One')}}</option>
+                                    <option value="Jounsari">{{translate('Jounsari')}}</option>
+                                    <option value="Bawar">{{translate('Bawar')}}</option>
+                                    <option value="Jonpari">{{translate('Jonpari')}}</option>
+                                    <option value="Himachali">{{translate('Himachali')}}</option>
+                                    <option value="Garhwali">{{translate('Garhwali')}}</option>
+                                    <option value="Kumouni">{{translate('Kumouni')}}</option>
+                                    <option value="Other">{{translate('Other')}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="name">{{ translate('Block') }}</label>
+                                <select class="form-control aiz-selectpicker" name="block" data-live-search="true">
+                                    <option value="">{{translate('Select One')}}</option>
+                                    <option value="Kalsi">{{translate('Kalsi')}}</option>
+                                    <option value="Chakrata">{{translate('Chakrata')}}</option>
+                                    <option value="Other">{{translate('Other')}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group mb-3">
