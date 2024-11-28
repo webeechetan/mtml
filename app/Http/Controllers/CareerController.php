@@ -55,13 +55,15 @@ class CareerController extends Controller
              return Redirect::back();
          }
 
-         $career              = new Career;
-         $career->user_id     = $request->user_id;
-         $career->designation = $request->designation;
-         $career->company     = $request->company;
-         $career->start       = $request->career_start;
-         $career->end         = $request->career_end;
-         $career->salary      = $request->salary;
+            $career              = new Career;
+            $career->user_id     = $request->user_id;
+            $career->designation = $request->designation;
+            $career->company     = $request->company;
+            $career->start       = $request->career_start;
+            $career->end         = $request->career_end;
+            $career->salary      = $request->salary;
+            $career->working_with   = $request->working_with;
+         
 
          if($career->save()){
              flash(translate('Career Info has been added successfully'))->success();
@@ -119,6 +121,7 @@ class CareerController extends Controller
          $career->start       = $request->career_start;
          $career->end         = $request->career_end;
          $career->salary      = $request->salary;
+         $career->working_with   = $request->working_with;
 
 
          if($career->save()){

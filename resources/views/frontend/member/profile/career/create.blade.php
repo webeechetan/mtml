@@ -37,6 +37,21 @@
                 <input type="text" name="salary"  placeholder="{{ translate('Salary') }}" class="form-control">
             </div>
         </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label">{{translate('Working With')}}</label>
+            <div class="col-md-9">
+                <select name="working_with" id="working_with" class="form-control">
+                    <option value="Private Company">Private Company</option>
+                    <option value="Govt/Public Sector">Govt/Public Sector</option>
+                    <option value="Defence/Civil Servent">Defence/Civil Servent</option>
+                    <option value="Business/Self Employes">Business/Self Employes</option>
+                    <option value="Not Working">Not Working</option>
+                </select>
+            </div>
+        </div>
+
+        
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">{{translate('Close')}}</button>
