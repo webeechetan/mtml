@@ -109,6 +109,7 @@ class SpiritualBackgroundController extends Controller
          $spiritual_backgrounds->patti              = $request->patti;
          $spiritual_backgrounds->gaon               = $request->gaon;
          $spiritual_backgrounds->khandan            = $request->khandan;
+         $spiritual_backgrounds->sub_community      = $request->sub_community;
          $spiritual_backgrounds->caste_id           = $request->member_caste_id;
          $spiritual_backgrounds->sub_caste_id       = $request->member_sub_caste_id;
         $spiritual_backgrounds->ethnicity	        = $request->ethnicity;

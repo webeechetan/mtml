@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-10">
                         <div class="input-group mb-3">
-                          <input type="email" class="form-control" placeholder="{{ translate('Your Email')}}" name="email" value="{{ Auth::user()->email }}" />
+                          <input type="email" required class="form-control" placeholder="{{ translate('Your Email')}}" name="email" value="{{ Auth::user()->email }}" />
                           <div class="input-group-append">
                              <button type="button" class="btn btn-outline-secondary new-email-verification">
                                  <span class="d-none loading">
@@ -101,11 +101,11 @@
     @endif
 
     <!-- Residency Information -->
-    @if(get_setting('member_residency_information_section') == 'on')
+    {{-- @if(get_setting('member_residency_information_section') == 'on')
       @include('frontend.member.profile.residency_information')
-    @endif
+    @endif --}}
 
-    <!-- Spiritual & Social Background -->
+    <!-- Social Background -->
     @php
         $member_religion_id   = !empty($member->spiritual_backgrounds->religion_id) ? $member->spiritual_backgrounds->religion_id : "";
         $member_caste_id      = !empty($member->spiritual_backgrounds->caste_id) ? $member->spiritual_backgrounds->caste_id : "";
@@ -126,7 +126,7 @@
     @endif
 
     <!-- Permanent Address -->
-    @php
+    {{-- @php
         $permanent_address      = \App\Models\Address::where('type','permanent')->where('user_id',$member->id)->first();
         $permanent_country_id   = !empty($permanent_address->country_id) ? $permanent_address->country_id : "";
         $permanent_state_id     = !empty($permanent_address->state_id) ? $permanent_address->state_id : "";
@@ -135,7 +135,7 @@
     @endphp
     @if(get_setting('member_permanent_address_section') == 'on')
       @include('frontend.member.profile.permanent_address')
-    @endif
+    @endif --}}
 
     <!-- Family Information -->
     @if(get_setting('member_family_information_section') == 'on')
@@ -167,8 +167,6 @@
     $(document).ready(function(){
          get_states_by_country_for_present_address();
          get_cities_by_state_for_present_address();
-         get_states_by_country_for_permanent_address();
-         get_cities_by_state_for_permanent_address();
          get_castes_by_religion_for_member();
          get_sub_castes_by_caste_for_member();
          get_castes_by_religion_for_partner();
@@ -227,57 +225,7 @@
   	    get_cities_by_state_for_present_address();
   	});
 
-    // For permanent address
-    function get_states_by_country_for_permanent_address(){
-        var permanent_country_id = $('#permanent_country_id').val();
-            $.post('{{ route('states.get_state_by_country') }}',{_token:'{{ csrf_token() }}', country_id:permanent_country_id}, function(data){
-                $('#permanent_state_id').html(null);
-                for (var i = 0; i < data.length; i++) {
-                    $('#permanent_state_id').append($('<option>', {
-                        value: data[i].id,
-                        text: data[i].name
-                    }));
-                }
-                $("#permanent_state_id > option").each(function() {
-                    if(this.value == '{{$permanent_state_id}}'){
-                        $("#permanent_state_id").val(this.value).change();
-                    }
-                });
-
-                AIZ.plugins.bootstrapSelect('refresh');
-
-                get_cities_by_state_for_permanent_address();
-            });
-    }
-
-    function get_cities_by_state_for_permanent_address(){
-        var permanent_state_id = $('#permanent_state_id').val();
-            $.post('{{ route('cities.get_cities_by_state') }}',{_token:'{{ csrf_token() }}', state_id:permanent_state_id}, function(data){
-                $('#permanent_city_id').html(null);
-                for (var i = 0; i < data.length; i++) {
-                    $('#permanent_city_id').append($('<option>', {
-                        value: data[i].id,
-                        text: data[i].name
-                    }));
-                }
-                $("#permanent_city_id > option").each(function() {
-                    if(this.value == '{{$permanent_city_id}}'){
-                        $("#permanent_city_id").val(this.value).change();
-                    }
-                });
-
-                AIZ.plugins.bootstrapSelect('refresh');
-            });
-    }
-
-    $('#permanent_country_id').on('change', function() {
-        get_states_by_country_for_permanent_address();
-    });
-
-    $('#permanent_state_id').on('change', function() {
-        get_cities_by_state_for_permanent_address();
-    });
-
+    
     // get castes and subcastes For member
     function get_castes_by_religion_for_member(){
         var member_religion_id = $('#member_religion_id').val();

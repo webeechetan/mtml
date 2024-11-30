@@ -33,7 +33,7 @@
                                     <option value="">{{translate('Select One')}}</option>
                                     <option value="Jounsari">{{translate('Jounsari')}}</option>
                                     <option value="Bawar">{{translate('Bawar')}}</option>
-                                    <option value="Jonpari">{{translate('Jonpari')}}</option>
+                                    <option value="Jonpuri">{{translate('Jonpuri')}}</option>
                                     <option value="Himachali">{{translate('Himachali')}}</option>
                                     <option value="Garhwali">{{translate('Garhwali')}}</option>
                                     <option value="Kumouni">{{translate('Kumouni')}}</option>

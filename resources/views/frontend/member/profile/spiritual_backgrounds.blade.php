@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h5 class="mb-0 h6">{{translate('Spiritual & Social Background')}}</h5>
+        <h5 class="mb-0 h6">{{translate('Social Background')}}</h5>
     </div>
     <div class="card-body">
       <form action="{{ route('spiritual_backgrounds.update', $member->id) }}" method="POST">
@@ -25,10 +25,10 @@
                   <select class="form-control aiz-selectpicker" name="community" id="community" data-live-search="true" >
                         <option value="">{{translate('Select One')}}</option>
                         <option value="Jounsari"
-                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Jounsari")
+                        @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Jaunsari")
                             selected
                         @endif
-                        >Jounsari</option>
+                        >Jaunsari</option>
                         <option value="Bawar"
                         @if(!empty($member->spiritual_backgrounds->community) && $member->spiritual_backgrounds->community == "Bawar")
                             selected
@@ -123,6 +123,13 @@
                 <label for="Khandan/Parivaar">{{translate('Khandan/Parivaar Name')}}</label>
                 <input type="text" name="khandan" value="{{!empty($member->spiritual_backgrounds->khandan) ? $member->spiritual_backgrounds->khandan : "" }}" class="form-control" placeholder="{{translate('khandan')}}">
                 @error('khandan')
+                    <small class="form-text text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+            <div class="col-md-6" style="margin-top: 15px">
+                <label for="Khandan/Parivaar">{{translate('Sub-Community')}}</label>
+                <input type="text" name="sub_community" value="{{!empty($member->spiritual_backgrounds->sub_community) ? $member->spiritual_backgrounds->sub_community : "" }}" class="form-control" placeholder="{{translate('sub_community')}}">
+                @error('sub_community')
                     <small class="form-text text-danger">{{ $message }}</small>
                 @enderror
             </div>

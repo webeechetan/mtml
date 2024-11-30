@@ -12,6 +12,10 @@
                     <input type="text" name="general" value="{{ !empty($member->partner_expectations->general) ? $member->partner_expectations->general : "" }}" class="form-control" placeholder="{{translate('General')}}" required>
                 </div>
                 <div class="col-md-6">
+                    <label for="age">Age</label>
+                    <input type="text" name="age" value="{{ !empty($member->partner_expectations->age) ? $member->partner_expectations->age : "" }}" class="form-control" placeholder="{{translate('Age')}}" required>
+                </div>
+                {{-- <div class="col-md-6">
                     <label for="residence_country_id">{{translate('Residence Country')}}</label>
                     @php $partner_residence_country = !empty($member->partner_expectations->residence_country_id) ? $member->partner_expectations->residence_country_id : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="residence_country_id" data-live-search="true" required>
@@ -22,7 +26,7 @@
                     @error('residence_country_id')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
-                </div>
+                </div> --}}
             </div>
 
             <div class="form-group row">
@@ -44,7 +48,7 @@
 
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label for="partner_marital_status">{{translate('Marital Status')}}</label>
+                    <label for="partner_marital_status">{{translate('Marital-Status')}}</label>
                     @php $partner_marital_status_id = !empty($member->partner_expectations->marital_status_id) ? $member->partner_expectations->marital_status_id : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="partner_marital_status" data-live-search="true" required>
                         <option value="">{{ translate('Choose One') }}</option>
@@ -94,6 +98,109 @@
             </div>
 
             <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="community">{{translate('Community')}}</label>
+                    <select class="form-control aiz-selectpicker" name="community" id="community" data-live-search="true" >
+                          <option value="">{{translate('Select One')}}</option>
+                          <option value="Jounsari"
+                          @if(!empty($member->partner_expectations->community) && $member->partner_expectations->community == "Jaunsari")
+                              selected
+                          @endif
+                          >Jaunsari</option>
+                          <option value="Bawar"
+                          @if(!empty($member->partner_expectations->community) && $member->partner_expectations->community == "Bawar")
+                              selected
+                          @endif
+                          >Bawar</option>
+                          <option value="Jonpuri"
+                          @if(!empty($member->partner_expectations->community) && $member->partner_expectations->community == "Jonpuri")
+                              selected
+                          @endif
+                          >Jonpuri</option>
+                          <option value="Himachali"
+                          @if(!empty($member->partner_expectations->community) && $member->partner_expectations->community == "Himachali")
+                              selected
+                          @endif
+                          >Himachali</option>
+                          <option value="Garhwali"
+                          @if(!empty($member->partner_expectations->community) && $member->partner_expectations->community == "Garhwali")
+                              selected
+                          @endif
+                          >Garhwali</option>
+                          <option value="kumoani"
+                          @if(!empty($member->partner_expectations->community) && $member->partner_expectations->community == "kumoani")
+                              selected
+                          @endif
+                          >kumoani</option>
+                          <option value="Other"
+                          @if(!empty($member->partner_expectations->community) && $member->partner_expectations->community == "Other")
+                              selected
+                          @endif
+                          >Other</option>
+                    </select>
+                    @error('community')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="col-md-6">
+                    <label for="block">{{translate('block')}}</label>
+                    <select class="form-control aiz-selectpicker" name="block" id="block" data-live-search="true">
+                      <option value="">
+                          {{translate('Select One')}}
+                      </option>
+                      <option value="Kalsi"
+                      @if(!empty($member->partner_expectations->block) && $member->partner_expectations->block == "Kalsi")
+                          selected
+                      @endif
+                      >Kalsi</option>
+                      <option value="Chakrata"
+                      @if(!empty($member->partner_expectations->block) && $member->partner_expectations->block == "Chakrata")
+                          selected
+                      @endif
+                      >Chakrata</option>
+                      <option value="Other"
+                      @if(!empty($member->partner_expectations->block) && $member->partner_expectations->block == "Other")
+                          selected
+                      @endif
+                      >Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="Patti">{{translate('Khat/Patti')}}</label>
+                    <select class="form-control aiz-selectpicker" name="patti" id="patti" data-live-search="true">
+                      <option value="">
+                          {{translate('Select One')}}
+                      </option>
+                      @php
+                        $patti = ['Koru', 'Seli', 'Samalta', 'Bamtad', 'Maletha', 'Athgaon', 'Bantad', 'Bamtad',
+                                'Silgaon', 'Vishail', 'Pashgaon', 'Chandau', 'Udpalta', 'Siligothan', 'Bheladh', 'Lakhwad',
+                                'Siligothan', 'Fartad', 'Bharam', 'Magthadh', 'Ghanau', 'Mohana', 'Kaili', 'Bondar', 'Chhultad',
+                                'Bhondar', 'Taplad', 'Bislad', 'Dwar', 'Babar', 'Babar', 'Devdhar', 'Silgaon Babar', 'Other'];
+                      @endphp
+                        @foreach ($patti as $patti)
+                            <option value="{{$patti}}"
+                            @if(!empty($member->partner_expectations->patti) && $member->partner_expectations->patti == $patti)
+                                selected
+                            @endif
+                            >{{$patti}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="Your Gaon">{{translate('Gaon')}}</label>
+                    <input type="text" name="gaon" value="{{!empty($member->partner_expectations->gaon) ? $member->partner_expectations->gaon : "" }}" class="form-control" placeholder="{{translate('Gaon')}}">
+                    @error('gaon')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row">
                 
                 <div class="col-md-6">
                     <label for="language_id">{{translate('Language')}}</label>
@@ -110,17 +217,27 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="pertner_complexion">{{translate('Complexion')}}</label>
+                    {{-- <label for="pertner_complexion">{{translate('Complexion')}}</label>
                     <input type="text" name="pertner_complexion" value="{{ !empty($member->partner_expectations->complexion) ? $member->partner_expectations->complexion : "" }}" class="form-control" placeholder="{{translate('Complexion')}}" required>
                     @error('pertner_complexion')
                         <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
+                    @enderror --}}
+
+                    <label for="partner_diet">{{translate('Diet')}}</label>
+                    @php $user_partner_diet = !empty($member->partner_expectations->diet) ? $member->partner_expectations->diet : ""; @endphp
+                    <select class="form-control aiz-selectpicker" name="partner_diet" data-live-search="true" required>
+                        <option value="Veg" @if($user_partner_diet ==  'Veg') selected @endif >{{translate('Veg')}}</option>
+                        <option value="Non-Veg" @if($user_partner_diet ==  'Non-Veg') selected @endif >{{translate('Non-Veg')}}</option>
+                        @error('partner_diet')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                        @enderror
+                    </select>
                 </div>
             </div>
 
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label for="pertner_education">{{translate('Education')}}</label>
+                    <label for="pertner_education">{{translate('Qualification')}}</label>
                     <input type="text" name="pertner_education" value="{{ !empty($member->partner_expectations->education) ? $member->partner_expectations->education : "" }}" class="form-control" placeholder="{{translate('Education')}}">
                     @error('pertner_education')
                         <small class="form-text text-danger">{{ $message }}</small>
@@ -129,21 +246,33 @@
 
                 <div class="col-md-6">
                     <label for="partner_profession">{{translate('Profession')}}</label>
-                    <input type="text" name="partner_profession" value="{{ !empty($member->partner_expectations->profession) ? $member->partner_expectations->profession : "" }}" class="form-control" placeholder="{{translate('Profession')}}">
-                    @error('partner_profession')
+                    {{-- <input type="text" name="partner_profession" value="{{ !empty($member->partner_expectations->profession) ? $member->partner_expectations->profession : "" }}"> --}}
+                    @php $user_profession = !empty($member->partner_expectations->profession) ? $member->partner_expectations->profession : ""; @endphp
+                    <select name="partner_profession" id="partner_profession"  class="form-control aiz-selectpicker" placeholder="{{translate('Profession')}}">
+                        <option value="Private Company" @if($user_profession ==  'Private Company') selected @endif >{{translate('Private Company')}}</option>
+                        <option value="Govt/Public Sector" @if($user_profession ==  'Govt/Public Sector') selected @endif >{{translate('Govt/Public Sector')}}</option>
+                        <option value="Defence/Civil Servent" @if($user_profession ==  'Defence/Civil Servent') selected @endif >{{translate('Defence/Civil Servent')}}</option>
+                        <option value="Business/Self Employes" @if($user_profession ==  'Business/Self Employes') selected @endif >{{translate('Business/Self Employes')}}</option>
+                        <option value="Not Working" @if($user_profession ==  'Not Working') selected @endif >{{translate('Not Working')}}</option>
+                        @error('partner_profession')
                         <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
+                        @enderror
+                    </select>
+
+                    
                 </div>
             </div>
 
             <div class="form-group row">
                 <div class="col-md-6">
+                    
+
                     <label for="smoking_acceptable">{{translate('Smoking Acceptable')}}</label>
                     @php $partner_smoking_acceptable = !empty($member->partner_expectations->smoking_acceptable) ? $member->partner_expectations->smoking_acceptable : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="smoking_acceptable" required>
                         <option value="yes" @if($partner_smoking_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
                         <option value="no" @if($partner_smoking_acceptable ==  'no') selected @endif >{{translate('No')}}</option>
-                        <option value="dose_not_matter" @if($partner_smoking_acceptable ==  'dose_not_matter') selected @endif >{{translate('Dose not matter')}}</option>
+                        <option value="Occasionally" @if($partner_smoking_acceptable ==  'Occasionally') selected @endif >{{translate('Occasionally')}}</option>
                     </select>
                     @error('smoking_acceptable')
                         <small class="form-text text-danger">{{ $message }}</small>
@@ -155,7 +284,7 @@
                     <select class="form-control aiz-selectpicker" name="drinking_acceptable" required>
                         <option value="yes" @if($partner_drinking_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
                         <option value="no" @if($partner_drinking_acceptable ==  'no') selected @endif >{{translate('No')}}</option>
-                        <option value="dose_not_matter" @if($partner_drinking_acceptable ==  'dose_not_matter') selected @endif >{{translate('Dose not matter')}}</option>
+                        <option value="Occasionally" @if($partner_drinking_acceptable ==  'Occasionally') selected @endif >{{translate('Occasionally')}}</option>
                     </select>
                     @error('drinking_acceptable')
                         <small class="form-text text-danger">{{ $message }}</small>

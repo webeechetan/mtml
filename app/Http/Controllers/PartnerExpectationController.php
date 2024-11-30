@@ -74,11 +74,16 @@ class PartnerExpectationController extends Controller
      {
          $this->rules = [
              'general'                      => [ 'max:255'],
+             'age'                          => [ 'max:255'],
              'partner_height'               => [ 'max:50'],
              'partner_weight'               => [ 'max:50'],
              'partner_children_acceptable'  => [ 'max:20'],
              'pertner_education'            => [ 'max:255'],
              'partner_profession'           => [ 'max:50'],
+             'community'                    => [ 'max:50'],
+             'block'                        => [ 'max:50'],
+             'patti'                         => [ 'max:50'],
+             'gaon'                        => [ 'max:50'],
              'smoking_acceptable'           => [ 'max:20'],
              'drinking_acceptable'          => [ 'max:20'],
              'partner_diet'                 => [ 'max:50'],
@@ -89,11 +94,16 @@ class PartnerExpectationController extends Controller
          ];
          $this->messages = [
              'general.max'                      => translate('Max 255 characters'),
+             'age.max'                          => translate('Max 255 characters'),
              'partner_height.max'               => translate('Max 50 characters'),
              'partner_weight.max'               => translate('Max 50 characters'),
              'partner_children_acceptable.max'  => translate('Max 20 characters'),
              'pertner_education.max'            => translate('Max 255 characters'),
              'partner_profession.max'           => translate('Max 50 characters'),
+             'community.max'                    => translate('Max 50 characters'),
+             'block.max'                        => translate('Max 50 characters'),
+             'patti.max'                        => translate('Max 50 characters'),
+             'gaon.max'                         => translate('Max 50 characters'),
              'smoking_acceptable.max'           => translate('Max 20 characters'),
              'drinking_acceptable.max'          => translate('Max 20 characters'),
              'partner_diet.max'                 => translate('Max 50 characters'),
@@ -120,6 +130,7 @@ class PartnerExpectationController extends Controller
          }
 
          $partner_expectations->general                   = $request->general;
+         $partner_expectations->age                       = $request->age;
          $partner_expectations->height                    = $request->partner_height;
          $partner_expectations->weight                    = $request->partner_weight;
          $partner_expectations->marital_status_id         = $request->partner_marital_status;
@@ -130,6 +141,10 @@ class PartnerExpectationController extends Controller
          $partner_expectations->sub_caste_id              = $request->partner_sub_caste_id;
          $partner_expectations->education                 = $request->pertner_education;
          $partner_expectations->profession                = $request->partner_profession;
+         $partner_expectations->community                = $request->community;
+         $partner_expectations->block                = $request->block;
+         $partner_expectations->patti                = $request->patti;
+         $partner_expectations->gaon                = $request->gaon;
          $partner_expectations->smoking_acceptable        = $request->smoking_acceptable;
          $partner_expectations->drinking_acceptable       = $request->drinking_acceptable;
          $partner_expectations->diet                      = $request->partner_diet;

@@ -58,7 +58,7 @@
                                             <table class="w-100 opacity-70 mb-2 fs-12">
                                                 <tr>
                                                     <td class="py-1 w-25">
-                                                        <span>{{ translate('Age') }}</span>
+                                                        <span>Age</span>
                                                     </td>
                                                     <td class="py-1 w-25 fw-400">
                                                         {{ \Carbon\Carbon::parse($user->member->birthday)->age }}</td>
@@ -84,13 +84,19 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="py-1"><span>{{ translate('First Language') }}</span></td>
+                                                     <td class="py-1"><span>Patti</span></td>
+                                                    <td class="py-1 fw-400">
+                                                        @if (!empty($user->spiritual_backgrounds->patti))
+                                                            {{ $user->spiritual_backgrounds->patti }}
+                                                        @endif
+                                                    </td>
+                                                    {{-- <td class="py-1"><span>{{ translate('First Language') }}</span></td>
                                                     <td class="py-1 fw-400">
                                                         @if ($user->member->mothere_tongue != null)
                                                             {{ \App\Models\MemberLanguage::where('id', $user->member->mothere_tongue)->first()->name }}
                                                         @endif
-                                                    </td>
-                                                    <td class="py-1"><span>{{ translate('Marital Status') }}</span></td>
+                                                    </td> --}}
+                                                    <td class="py-1"><span>Marital Status</span></td>
                                                     <td class="py-1 fw-400">
                                                         @if ($user->member->marital_status_id != null)
                                                             {{ $user->member->marital_status->name }}
@@ -98,7 +104,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="py-1"><span>{{ translate('Location') }}</span></td>
+                                                    <td class="py-1"><span>Location</span></td>
                                                     <td class="py-1 fw-400">
                                                         @php
                                                             $present_address = \App\Models\Address::where('type', 'present')
@@ -109,7 +115,44 @@
                                                             {{ $present_address->country->name }}
                                                         @endif
                                                     </td>
+                                                     <td class="py-1"><span>{{ translate('Diet') }}</span></td>
+                                                    <td class="py-1 fw-400">
+                                                        @if (!empty($user->lifestyles->diet))
+                                                            {{ $user->lifestyles->diet }}
+                                                        @endif
+                                                    </td>
                                                 </tr>
+                                                <tr>
+                                                    
+                                                     <td class="py-1"><span>{{ translate('Drink') }}</span></td>
+                                                    <td class="py-1 fw-400">
+                                                        @if (!empty($user->lifestyles->drink))
+                                                            {{ $user->lifestyles->drink }}
+                                                        @endif
+                                                    </td>
+                                                    <td class="py-1"><span>{{ translate('Smoke') }}</span></td>
+                                                    <td class="py-1 fw-400">
+                                                        @if (!empty($user->lifestyles->smoke))
+                                                            {{ $user->lifestyles->smoke }}
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="py-1"><span>{{ translate('Highest Qualification') }}</span></td>
+                                                   <td class="py-1 fw-400">
+                                                       @if (!empty($user->education->degree))
+                                                           {{ $user->education->degree }}
+                                                       @endif
+                                                   </td>
+                                                   {{-- <td class="py-1"><span>{{ translate('Smoke') }}</span></td>
+                                                   <td class="py-1 fw-400">
+                                                       @if (!empty($user->lifestyles->smoke))
+                                                           {{ $user->lifestyles->smoke }}
+                                                       @endif
+                                                   </td> --}}
+                                               </tr>
+                                                
                                             </table>
                                             <div class="row gutters-5 text-center">
                                                 <div class="col">

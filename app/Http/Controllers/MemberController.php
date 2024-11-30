@@ -10,6 +10,7 @@ use App\Models\State;
 use App\Models\City;
 use App\Models\Religion;
 use App\Models\Caste;
+use App\Models\Education;
 use App\Models\SubCaste;
 use App\Models\MemberLanguage;
 use App\Models\FamilyValue;
@@ -539,7 +540,7 @@ class MemberController extends Controller
       $marital_statuses   = MaritalStatus::all();
       $on_behalves        = OnBehalf::all();
       $languages          = MemberLanguage::all();
-
+    
       return view('frontend.member.profile.index', compact('member','countries','states','cities','religions','castes','sub_castes','family_values','marital_statuses','on_behalves','languages'));
     }
 

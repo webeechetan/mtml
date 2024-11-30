@@ -177,6 +177,7 @@ class HomeController extends Controller
         $min_height     = ($request->min_height != null) ? $request->min_height : null;
         $max_height     = ($request->max_height != null) ? $request->max_height : null;
         $member_type    = ($request->member_type != null) ? $request->member_type : 0;
+        // $education    = ($request->education != null) ? $request->education : null;
 
 
         $users = User::orderBy('created_at', 'desc')
@@ -234,17 +235,20 @@ class HomeController extends Controller
             $users = $users->where('code', $member_code);
         }
     
-    // Search by Community
+        //education 
+        
+        // Search by Community
         if ($community != null) {
-            $user_ids = Member::where('community', $community)->pluck('user_id')->toArray();
-            if (count($user_ids) > 0) {
-                $users = $users->WhereIn('id', $user_ids);
-            }
+            $user_ids = SpiritualBackground::where('community', $community)->pluck('user_id')->toArray();
+
+         
+            $users = $users->WhereIn('id', $user_ids);
         }
         // Search by block
         if ($block != null) {
-            $user_ids = Member::where('block', $block)->pluck('user_id')->toArray();
-            if (count($user_ids) > 0) {
+            $user_ids = SpiritualBackground::where('block', $block)->pluck('user_id')->toArray();
+            if (count($user_ids) > 0)
+            {
                 $users = $users->WhereIn('id', $user_ids);
             }
         }
