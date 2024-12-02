@@ -545,15 +545,15 @@
                                                                 {{ !empty($user->member->birthday) ? date('d/m/Y', strtotime($user->member->birthday)) : '' }}
                                                             </td>
                                                         </tr>
-                                                        <tr>
+                                                        {{-- <tr>
                                                             <th class="py-1 fw-600">{{ translate('Caste') }}</th>
                                                             <td class="py-1">
                                                                 {{ !empty($user->spiritual_backgrounds->caste->name) ? $user->spiritual_backgrounds->caste->name : '' }}
                                                             </td>
-                                                        </tr>
+                                                        </tr> --}}
                                                         <tr>
                                                             <td class="py-1 fw-600">
-                                                                {{ translate('Marital Status') }}
+                                                                {{ translate('Marital-Status') }}
                                                             </td>
                                                             <td class="py-1">
                                                                 {{ !empty($user->member->marital_status->name) ? $user->member->marital_status->name : '' }}
@@ -1014,7 +1014,7 @@
                                                     <table class="w-100">
                                                         <tbody>
                                                             <tr>
-                                                                <th>{{ translate('Mother Tangue') }}</th>
+                                                                <th>{{ translate('Mother-Tongue') }}</th>
                                                                 <td class="py-1">
                                                                     @if(!empty($user->member->mothere_tongue) && $user->member->mothereTongue != null)
                                                                         {{ $user->member->mothereTongue->name }}
@@ -1335,7 +1335,7 @@
                                         </span>
                                         <div class="ml-4">
                                             <span
-                                                class="fs-18 fw-600 d-block">{{ translate('Spiritual & Social Background') }}</span>
+                                                class="fs-18 fw-600 d-block">{{ translate('Social Background') }}</span>
                                         </div>
                                     </div>
                                     <div id="spiritual-social" class="collapse accordion-body ml-3 ml-md-5 pl-25px"
@@ -1461,13 +1461,13 @@
                                                                     {{ !empty($user->lifestyles->drink) ? $user->lifestyles->drink : '' }}
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            {{-- <tr>
                                                                 <th class="py-1">{{ translate('Living With') }}
                                                                 </th>
                                                                 <td class="py-1">
                                                                     {{ !empty($user->lifestyles->living_with) ? $user->lifestyles->living_with : '' }}
                                                                 </td>
-                                                            </tr>
+                                                            </tr> --}}
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -1550,7 +1550,7 @@
                                 </div>
                             @endif
 
-                            @if (get_setting('member_permanent_address_section') == 'on')
+                            {{-- @if (get_setting('member_permanent_address_section') == 'on')
                                 <!-- Permanent Address -->
                                 <div class="pb-4 accordion-item">
                                     <div class="accordion-head c-pointer d-flex align-items-center mb-4"
@@ -1628,7 +1628,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endif
+                            @endif --}}
 
                             @if (get_setting('member_family_information_section') == 'on')
                                 <!-- Family Information -->
@@ -1690,6 +1690,13 @@
                                                                 <td class="py-1">
                                                                     {{ !empty($user->families->mother) ? $user->families->mother : '' }}
                                                                 </td>
+                                                                <tr>
+                                                                    <th class="py-1">{{ translate('Living With') }}
+                                                                    </th>
+                                                                    <td class="py-1">
+                                                                        {{ !empty($user->families->living_with) ? $user->families->living_with : '' }}
+                                                                    </td>
+                                                                </tr>
                                                             </tr>
                                                         </tbody>
                                                     </table>

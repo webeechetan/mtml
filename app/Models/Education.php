@@ -14,4 +14,5 @@ class Education extends Model
     {
         return $this->belongsTo(User::class)->withTrashed();
     }
+  
 }

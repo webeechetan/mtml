@@ -19,7 +19,10 @@
                             </div>
                         </div>
                         <div class="mb-5">
+                           
                             @foreach ($users as $key => $user)
+
+
                                 <div class="row no-gutters border border-gray-300 rounded hov-shadow-md mb-4 has-transition position-relative"
                                     id="block_id_{{ $user->id }}">
                                     <div class="col-md-auto">
@@ -141,8 +144,8 @@
                                                     
                                                     <td class="py-1"><span>{{ translate('Highest Qualification') }}</span></td>
                                                    <td class="py-1 fw-400">
-                                                       @if (!empty($user->education->degree))
-                                                           {{ $user->education->degree }}
+                                                       @if (!empty($user->educations->degree))
+                                                           {{ $user->educations->degree }}
                                                        @endif
                                                    </td>
                                                    {{-- <td class="py-1"><span>{{ translate('Smoke') }}</span></td>

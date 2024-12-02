@@ -177,4 +177,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasmany(ProfileMatch::class);
     }
+
+        // In User.php
+    public function educations()
+    {
+        return $this->hasOne(Education::class);
+    }
+
 }
