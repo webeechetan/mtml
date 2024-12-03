@@ -278,13 +278,13 @@
                                         <div class="col-lg">
                                             <div class="form-group mb-3">
                                                 <label class="form-label"
-                                                    for="name">{{ translate('Age From') }}</label>
+                                                    for="name">Age From</label>
                                                 <input type="number" name="age_from" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg">
                                             <div class="form-group mb-3">
-                                                <label class="form-label" for="name">{{ translate('To') }}</label>
+                                                <label class="form-label" for="name">To</label>
                                                 <input type="number" name="age_to" class="form-control">
                                             </div>
                                         </div>
@@ -307,7 +307,7 @@
                                         <div class="col-lg">
                                             <div class="form-group mb-3">
                                                 <label class="form-label"
-                                                    for="name">{{ translate('Mother Tongue') }}</label>
+                                                    for="name">{{ translate('Mother-Tongue') }}</label>
                                                 @php $mother_tongues = \App\Models\MemberLanguage::all(); @endphp
                                                 <select name="mother_tongue" class="form-control aiz-selectpicker"
                                                     data-live-search="true" data-container="body">

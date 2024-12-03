@@ -19,7 +19,7 @@
                         <th data-breakpoints="lg">{{translate('Location')}}</th>
                       @endif
                       @if(get_setting('member_language_section') == 'on')
-                        <th data-breakpoints="lg">{{translate('Mother  Tongue')}}</th>
+                        <th data-breakpoints="lg">{{translate('Mother-Tongue')}}</th>
                       @endif
                       <th class="text-right" data-breakpoints="lg">{{translate('Options')}}</th>
                   </tr>

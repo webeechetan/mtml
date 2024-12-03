@@ -1,3 +1,4 @@
+
 <div class="@if(get_setting('header_stikcy') == 'on') position-fixed @else position-absolute @endif w-100 top-0 z-1020">
     <div class="top-navbar bg-white border-bottom z-1035 py-2 d-none d-lg-block">
         <div class="container">
@@ -13,10 +14,12 @@
                 </div>
                 <div class="col-lg-7 col">
                     <ul class="list-inline mb-0 d-flex align-items-center justify-content-end ">
-                        <li class="list-inline-item mr-3 pr-3 border-right text-reset opacity-60">
-                            <span>{{ translate(' Help Line') }}</span>
-                            <span>{{ get_setting('header_helpline_no') }}</span>
+                       
+                        <li><div id="google_translate_element" style="margin-right: 10px"></div>
+
                         </li>
+                        
+
                         @if (Auth::check())
                         <li class="list-inline-item dropdown">
                             @php
@@ -260,3 +263,12 @@
         @endif
     </header>
 </div>
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en'},
+            'google_translate_element'
+        );
+    }
+</script>
+<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

@@ -17,7 +17,14 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="row mb-4">
+            <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 text-center mx-auto">
+                <a href="{{ route('terms.conditions') }}" class="d-inline-block py-15px">
+                    Terms & Conditions
+                </a>
+            </div>
 
+        </div> --}}
         @if (get_setting('footer_address') != null && get_setting('footer_website') != null && get_setting('footer_email') != null && get_setting('footer_phones') != null)
         <div class="mb-4">
             <h4 class="text-uppercase text-primary fs-14 border-bottom border-primary pb-4 mb-4">{{ translate('Contacts') }}</h4>

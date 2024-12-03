@@ -495,7 +495,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="py-1 fw-600">{{ translate('Age') }}</td>
+                                                            <td class="py-1 fw-600">Age</td>
                                                             <td class="py-1">
                                                                 {{ !empty($user->member->birthday) ? \Carbon\Carbon::parse($user->member->birthday)->age : '' }}
                                                             </td>
@@ -826,12 +826,14 @@
                                         <table class="table table-borderless border table-responsive">
                                             <tbody>
                                                 <tr>
-                                                    <th>{{ translate('designation') }}</th>
-                                                    <th>{{ translate('company') }}</th>
+                                                    <th>Designation</th>
+                                                    <th>Company</th>
                                                     <th>{{ translate('Start') }}</th>
                                                     <th>{{ translate('End') }}</th>
                                                     <th>{{ translate('Income (Yearly)') }}</th>
                                                     <th>{{ translate('Status') }}</th>
+                                                    <th>{{ translate('Working With ') }}</th>
+
                                                 </tr>
                                                 @php $careers = \App\Models\Career::where('user_id', $user->id)->get(); @endphp
                                                 @foreach ($careers as $key => $career)
@@ -850,6 +852,8 @@
                                                                     class="badge badge-inline badge-danger">{{ translate('Deactive') }}</span>
                                                             @endif
                                                         </td>
+                                                        <td>{{ $career->working_with }}</td>
+
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -1368,7 +1372,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <th class="py-1">
-                                                                    {{ translate('Patti') }}</th>
+                                                                    Patti</th>
                                                                 <td class="py-1">
                                                                     {{ !empty($user->spiritual_backgrounds->patti) ? $user->spiritual_backgrounds->patti : '' }}
                                                                 </td>
@@ -1380,13 +1384,13 @@
                                                     <table class="w-100 ml-sm-4">
                                                         <tbody>
                                                             <tr>
-                                                                <th class="py-1">{{ translate('Gaon') }}</th>
+                                                                <th class="py-1">Gaon</th>
                                                                 <td class="py-1">
                                                                     {{ !empty($user->spiritual_backgrounds->gaon) ? $user->spiritual_backgrounds->gaon : '' }}
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <th class="py-1">{{ translate('Khandan') }}
+                                                                <th class="py-1">Khandan
                                                                 </th>
                                                                 <td class="py-1">
                                                                     {{ !empty($user->spiritual_backgrounds->khandan) ? $user->spiritual_backgrounds->khandan : '' }}
@@ -1742,7 +1746,7 @@
                                     </tr>
 
                                     <tr>
-                                        <th>{{ translate('Marital Status') }}</th>
+                                        <th>Marital Status</th>
                                         <td>{{ !empty($user->partner_expectations->marital_status->name) ? $user->partner_expectations->marital_status->name : '' }}
                                         </td>
 
@@ -1819,7 +1823,7 @@
                                             @endphp
                                         </td>
 
-                                        <th>{{ translate('preferred_state_id') }}</th>
+                                        <th>{{ translate('Preferred State') }}</th>
                                         <td>
                                             @php
                                                 $preferred_state = !empty($user->partner_expectations->preferred_state_id) ? $user->partner_expectations->preferred_state_id : '';
