@@ -1,6 +1,7 @@
 
-<div class="@if(get_setting('header_stikcy') == 'on') position-fixed @else position-absolute @endif w-100 top-0 z-1020">
-    <div class="top-navbar bg-white border-bottom z-1035 py-2 d-none d-lg-block">
+
+<div  class="@if(get_setting('header_stikcy') == 'on') position-fixed @else position-absolute @endif w-100 top-0 z-1020">
+    <div style="background-color: #540b0e!important;" class="top-navbar bg-white border-bottom z-1035 py-2 d-none d-lg-block">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 col">
@@ -14,12 +15,12 @@
                 </div>
                 <div class="col-lg-7 col">
                     <ul class="list-inline mb-0 d-flex align-items-center justify-content-end ">
-                       
-                        <li><div id="google_translate_element" style="margin-right: 10px"></div>
-
-                        </li>
-                        
-
+                       <li>
+                        <div id="google_translate_element"></div><script type="text/javascript">
+                            function googleTranslateElementInit() {
+                              new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                            }
+                            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li>
                         @if (Auth::check())
                         <li class="list-inline-item dropdown">
                             @php
@@ -156,53 +157,53 @@
             </div>
         </div>
     </div>
-    <header
-        class="aiz-header shadow-md bg-white border-gray-300">
-        <div class="aiz-navbar position-relative">
+    <header style="background-color: #540b0e!important;"
+        class="aiz-header shadow-md bg-white border-gray-300" >
+        <div   class="aiz-navbar position-relative" style="background-color: #540b0e!important;">
             <div class="container">
-                <div class="d-lg-flex justify-content-between text-center text-lg-left">
+                <div class="d-lg-flex justify-content-between text-center text-lg-left" >
                     <div class="logo">
                         <a href="{{ route('home') }}" class="d-inline-block py-15px">
                             @if(get_setting('header_logo') != null)
                             <img src="{{ uploaded_asset(get_setting('header_logo')) }}" alt="{{ env('APP_NAME') }}"
-                                class="mw-100 h-30px h-md-40px" height="40">
+                                class="mw-100 h-35px h-md-45px" height="40">
                             @else
                             <img src="{{ asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
-                                class="mw-100 h-30px h-md-40px" height="40">
+                                class="mw-100 h-35px h-md-45px" height="40">
                             @endif
                         </a>
                     </div>
-                    <ul
+                    <ul 
                         class="mb-0 pl-0 ml-lg-auto d-lg-flex align-items-stretch justify-content-center justify-content-lg-start mobile-hor-swipe">
-                        <li class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['home'],'bg-primary-grad') }}">
-                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center bg-white py-2"
+                        <li class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['home']) }}">
+                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
                                 href="{{ route('home') }}">
                                 <span class="text-primary-grad mb-n1">{{ translate('Home') }}</span>
                             </a>
                         </li>
                         <li
-                            class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['member.listing'],'bg-primary-grad') }}">
-                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center bg-white py-2"
+                            class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['member.listing']) }}">
+                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
                                 href="{{ route('member.listing') }}">
                                 <span class="text-primary-grad mb-n1">{{ translate('Active Members') }}</span>
                             </a>
                         </li>
-                        <li class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['packages'],'bg-primary-grad') }}">
-                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center bg-white py-2"
+                        <li class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['packages']) }}">
+                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center  py-2"
                                 href="{{ route('packages') }}">
                                 <span class="text-primary-grad mb-n1">{{ translate('Premium Plans') }}</span>
                             </a>
                         </li>
                         <li
-                            class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['happy_stories'],'bg-primary-grad') }}">
-                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center bg-white py-2"
+                            class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['happy_stories']) }}">
+                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center  py-2"
                                 href="{{ route('happy_stories') }}">
                                 <span class="text-primary-grad mb-n1">{{ translate('Happy Stories') }}</span>
                             </a>
                         </li>
                         <li
-                            class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['contact_us'],'bg-primary-grad') }}">
-                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center bg-white py-2"
+                            class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['contact_us']) }}">
+                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
                                 href="{{ route('contact_us') }}">
                                 <span class="text-primary-grad mb-n1">{{ translate('Contact Us') }}</span>
                             </a>
@@ -263,12 +264,3 @@
         @endif
     </header>
 </div>
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-            {pageLanguage: 'en'},
-            'google_translate_element'
-        );
-    }
-</script>
-<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
