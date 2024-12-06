@@ -49,9 +49,12 @@
                                             @elseif($user->membership == 2)
                                                 <span class="badge badge-inline badge-success">{{ translate('Preminum') }}</span>
                                             @endif
+                                            
+                                            @if($user->isPremiumVerified)
+                                                <span class="badge badge-inline badge-success">{{ translate('Verified') }}</span>
+                                            @endif
                                         </span>
                                         <div class="px-md-4 p-3 flex-grow-1">
-
                                             <h2 class="h6 fw-600 fs-18 text-truncate mb-1">
                                                 {{ $user->first_name . ' ' . $user->last_name }}</h2>
                                             <div class="mb-2 fs-12">

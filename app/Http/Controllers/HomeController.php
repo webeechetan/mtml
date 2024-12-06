@@ -177,7 +177,6 @@ class HomeController extends Controller
         $min_height     = ($request->min_height != null) ? $request->min_height : null;
         $max_height     = ($request->max_height != null) ? $request->max_height : null;
         $member_type    = ($request->member_type != null) ? $request->member_type : 0;
-        // $education    = ($request->education != null) ? $request->education : null;
 
 
         $users = User::orderBy('created_at', 'desc')

@@ -69,6 +69,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    public function isPremiumVerified()
+    {
+        return $this->hasOne(PackagePayment::class,'user_id')->where('package_id',11);
+    }
+
     public function member()
     {
         return $this->hasOne(Member::class);

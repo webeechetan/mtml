@@ -60,6 +60,11 @@
                 <div class="card-header">
                     <h2 class="fs-16 mb-0">{{  translate('Current package') }}</h2>
                 </div>
+                 @if($user->isPremiumVerified)
+                 He bhai
+                 @else
+                 Nahi he
+                 @endif
                 <div class="card-body">
                     <div class="text-center mb-4 mt-3">
                         <img class="mw-100 mx-auto mb-4" src="{{ uploaded_asset($user->member->package->image) }}" height="130">
@@ -67,7 +72,7 @@
                     </div>
                     <ul class="list-group list-group-raw fs-15 mb-4 pb-4 border-bottom">
                         <li class="list-group-item py-2">
-                            <i class="las la-check text-success mr-2"></i>
+                            <i class="las la-check text-success mr-2"></i> 
                             {{ $user->member->package->express_interest }} {{ translate('Express Interests') }}
                         </li>
                         <li class="list-group-item py-2">
