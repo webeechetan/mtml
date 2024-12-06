@@ -16,7 +16,7 @@
                 <div class="col-lg-7 col">
                     <ul class="list-inline mb-0 d-flex align-items-center justify-content-end ">
                        <li>
-                        <div id="google_translate_element"></div><script type="text/javascript">
+                        <div id="google_translate_element" ></div><script type="text/javascript">
                             function googleTranslateElementInit() {
                               new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
                             }
@@ -27,7 +27,7 @@
                             $notifications = \App\Models\Notification::latest()->where('notifiable_id',Auth()->user()->id)->take(10)->get();
                             $unseen_notification = \App\Models\Notification::where('notifiable_id',Auth()->user()->id)->where('read_at',null)->count();
                             @endphp
-                            <a href="javascript:void(0)" class="dropdown-toggle text-reset no-arrow p-5px"
+                            <a href="javascript:void(0)" class="dropdown-toggle text-white no-arrow p-5px"
                                 data-toggle="dropdown" data-display="static">
                                 <i class="las la-bell fs-16 opacity-60"></i>
                                 @if($unseen_notification > 0)
@@ -35,7 +35,7 @@
                                 @endif
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg py-0">
-                                <div class="p-3 bg-light border-bottom">
+                                <div class="p-3 bg-white border-bottom">
                                     <h6 class="mb-0">{{ translate('Notifications') }}</h6>
                                 </div>
                                 <ul class="list-group list-group-raw c-scrollbar-light"
@@ -53,7 +53,7 @@
                         $unseen_chat_thread_count = count($unseen_chat_threads);
                         @endphp
                         <li class="list-inline-item dropdown">
-                            <a href="javascript:void(0)" class="dropdown-toggle text-reset no-arrow p-5px"
+                            <a href="javascript:void(0)" class="dropdown-toggle text-white no-arrow p-5px"
                                 data-toggle="dropdown" data-display="static">
                                 <i class="las la-envelope fs-16 opacity-60"></i>
                                 @if($unseen_chat_thread_count > 0)
@@ -61,7 +61,7 @@
                                 @endif
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg py-0">
-                                <div class="p-3 bg-light border-bottom">
+                                <div class="p-3 bg-white border-bottom">
                                     <h6 class="mb-0">{{ translate('Messages') }}</h6>
                                 </div>
 
@@ -74,7 +74,7 @@
 
                                     @if ($chat != null)
                                     <a href="{{ route('all.messages') }}"
-                                        class="chat-user-item p-3 d-block text-inherit hov-bg-soft-primary">
+                                        class="chat-user-item p-3 d-block text-white hov-bg-soft-primary">
                                         <div class="media">
                                             <span class="avatar avatar-sm mr-3 flex-shrink-0">
                                                 @if($current_user == $chat->chatThread->sender->id)
@@ -122,12 +122,12 @@
                                 </div>
                                 <div class="border-top">
                                     <a href="{{ route('all.messages') }}"
-                                        class="btn text-reset btn-block">{{ translate('View All Messages') }}</a>
+                                        class="btn text-white btn-block">{{ translate('View All Messages') }}</a>
                                 </div>
                             </div>
                         </li>
                         <li class="list-inline-item mx-4">
-                            <a href="{{ route('dashboard') }}" class="d-flex align-items-center text-reset">
+                            <a href="{{ route('dashboard') }}" class="d-flex align-items-center text-white">
                                 <img src="{{ uploaded_asset(Auth::user()->photo) }}"
                                     class="size-30px rounded-circle img-fit mr-2"
                                     onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
@@ -178,34 +178,34 @@
                         <li class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['home']) }}">
                             <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
                                 href="{{ route('home') }}">
-                                <span class="text-primary-grad mb-n1">{{ translate('Home') }}</span>
+                                <span class="text-white mb-n1">{{ translate('Home') }}</span>
                             </a>
                         </li>
                         <li
                             class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['member.listing']) }}">
                             <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
                                 href="{{ route('member.listing') }}">
-                                <span class="text-primary-grad mb-n1">{{ translate('Active Members') }}</span>
+                                <span class="text-white mb-n1">{{ translate('Active Members') }}</span>
                             </a>
                         </li>
                         <li class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['packages']) }}">
                             <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center  py-2"
                                 href="{{ route('packages') }}">
-                                <span class="text-primary-grad mb-n1">{{ translate('Premium Plans') }}</span>
+                                <span class="text-white mb-n1">{{ translate('Premium Plans') }}</span>
                             </a>
                         </li>
                         <li
                             class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['happy_stories']) }}">
                             <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center  py-2"
                                 href="{{ route('happy_stories') }}">
-                                <span class="text-primary-grad mb-n1">{{ translate('Happy Stories') }}</span>
+                                <span class="text-white mb-n1">{{ translate('Happy Stories') }}</span>
                             </a>
                         </li>
                         <li
                             class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['contact_us']) }}">
                             <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
                                 href="{{ route('contact_us') }}">
-                                <span class="text-primary-grad mb-n1">{{ translate('Contact Us') }}</span>
+                                <span class="text-white mb-n1">{{ translate('Contact Us') }}</span>
                             </a>
                         </li>
                     </ul>
@@ -218,42 +218,42 @@
                 <ul class="list-inline d-flex align-items-center mb-0">
                     <li class="list-inline-item">
                         <a href="{{ route('dashboard') }}"
-                            class="text-reset d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['dashboard'],'text-primary-grad opacity-100') }}">
+                            class="text-white d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['dashboard'],'text-primary-grad opacity-100') }}">
                             <i class="las la-tachometer-alt mr-1"></i>
                             <span>{{ translate('Dashboard') }}</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="{{ route('profile_settings') }}"
-                            class="text-reset d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['profile_settings'],'text-primary-grad opacity-100') }}">
+                            class="text-white d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['profile_settings'],'text-primary-grad opacity-100') }}">
                             <i class="las la-user mr-1"></i>
                             <span>{{ translate('My Profile') }}</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="{{ route('my_interests.index') }}"
-                            class="text-reset d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['express-interest.index'],'text-primary-grad opacity-100') }}">
+                            class="text-white d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['express-interest.index'],'text-primary-grad opacity-100') }}">
                             <i class="la la-heart-o mr-1"></i>
                             <span>{{ translate('My Interest') }}</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="{{route('my_shortlists')}}"
-                            class="text-reset d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['my_shortlists'],'text-primary-grad opacity-100') }}">
+                            class="text-white d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['my_shortlists'],'text-primary-grad opacity-100') }}">
                             <i class="las la-list mr-1"></i>
                             <span>{{ translate('Shortlist') }}</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="{{ route('all.messages') }}"
-                            class="text-reset d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['all.messages'],'text-primary-grad opacity-100') }}">
+                            class="text-white d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['all.messages'],'text-primary-grad opacity-100') }}">
                             <i class="las la-envelope mr-1"></i>
                             <span>{{ translate('Messaging') }}</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="{{ route('my_ignored_list') }}"
-                            class="text-reset d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['my_ignored_list'],'text-primary-grad opacity-100') }}">
+                            class="text-white d-inline-block px-4 py-3 fw-600 {{ areActiveRoutes(['my_ignored_list'],'text-primary-grad opacity-100') }}">
                             <i class="las la-ban mr-1"></i>
                             <span>{{ translate('Ignored User List') }}</span>
                         </a>

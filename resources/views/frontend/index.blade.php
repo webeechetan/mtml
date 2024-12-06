@@ -428,7 +428,7 @@
 
     <!-- Trusted by Millions Section -->
     @if (get_setting('show_trusted_by_millions_section') == 'on')
-        <section class="bg-center bg-cover min-vh-100 py-8 text-white d-flex align-items-center bg-fixed"
+        <section class="bg-center bg-cover min-vh-100 py-8 text-black d-flex align-items-center bg-fixed"
             style="background-image: url('{{ uploaded_asset(get_setting('trusted_by_millions_background_image')) }}')">
             <div class="container">
                 <div class="row">
@@ -446,7 +446,7 @@
                     @if (!empty($homepage_best_features))
                         @foreach ($homepage_best_features as $key => $homepage_best_feature)
                             <div class="col-lg">
-                                <div class="border rounded position-relative z-1 border-gray-600 overflow-hidden mt-4">
+                                <div class="border rounded text-white position-relative z-1 border-gray-600 overflow-hidden mt-4">
                                     <div class="absolute-full bg-dark opacity-60 z--1"></div>
                                     <div class="px-4 py-5 d-flex align-items-center justify-content-center">
                                         <img src="{{ uploaded_asset(json_decode(get_setting('homepage_best_features_icons'), true)[$key]) }}"
