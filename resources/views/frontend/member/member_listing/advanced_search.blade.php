@@ -167,7 +167,7 @@
                         </div>
                     </div>
                     <h6 class="separator text-left mb-3 fs-12 text-uppercase text-secondary">
-                        <span class="bg-white pr-3">{{ translate('Member Type') }}</span>
+                        <span class=" pr-3">{{ translate('Member Type') }}</span>
                     </h6>
                     <div class="aiz-radio-list">
                         <label class="aiz-radio">

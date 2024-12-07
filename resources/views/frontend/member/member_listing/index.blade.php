@@ -23,7 +23,7 @@
                             @foreach ($users as $key => $user)
 
 
-                                <div class="row no-gutters border border-gray-300 rounded hov-shadow-md mb-4 has-transition position-relative"
+                                <div class="row no-gutters border border-black-300 rounded hov-shadow-md mb-4 has-transition position-relative"
                                     id="block_id_{{ $user->id }}">
                                     <div class="col-md-auto">
                                         <div class="text-center text-md-left pt-3 pt-md-0">
@@ -47,15 +47,17 @@
                                             @if ($user->membership == 1)
                                                 <span class="badge badge-inline badge-info">{{ translate('Free') }}</span>
                                             @elseif($user->membership == 2)
+
                                                 <span class="badge badge-inline badge-success">{{ translate('Preminum') }}</span>
                                             @endif
                                             
                                             @if($user->isPremiumVerified)
-                                                <span class="badge badge-inline badge-success">{{ translate('Verified') }}</span>
+                                            <span><img src="{{ asset('assets/img/logo.png') }}" width="25px" height="25px"></span>
+                                                {{-- <span class="badge badge-inline badge-success">{{ translate('Verified') }}</span> --}}
                                             @endif
                                         </span>
                                         <div class="px-md-4 p-3 flex-grow-1">
-                                            <h2 class="h6 fw-600 fs-18 text-truncate mb-1">
+                                            <h2 class="h6 fw-600 fs-18 text-black mb-1">
                                                 {{ $user->first_name . ' ' . $user->last_name }}</h2>
                                             <div class="mb-2 fs-12">
                                                 <span class="opacity-60">{{ translate('Member ID: ') }}</span>

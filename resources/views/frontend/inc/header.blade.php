@@ -44,7 +44,7 @@
                                 </ul>
                                 <div class="border-top">
                                     <a href="{{ route('frontend.notifications') }}"
-                                        class="btn text-reset btn-block">{{ translate('View All Notifications') }}</a>
+                                        class="btn text-white btn-block">{{ translate('View All Notifications') }}</a>
                                 </div>
                             </div>
                         </li>
@@ -134,7 +134,7 @@
                                 <span class="opacity-60 mr-1">
                                     {{ translate('Hi') }},
                                 </span>
-                                <span class="text-primary-grad fw-700">
+                                <span class="text-white fw-700">
                                     {{ Auth::user()->first_name }}
                                 </span>
                             </a>
@@ -145,7 +145,7 @@
                         </li>
                         @else
                         <li class="list-inline-item ml-4">
-                            <a class="text-reset opacity-60" href="{{ route('login') }}">{{ translate('Log In') }}</a>
+                            <a class="text-white opacity-60" href="{{ route('login') }}">{{ translate('Log In') }}</a>
                         </li>
                         <li class="list-inline-item ml-3">
                             <a class="btn btn-sm bg-primary-grad text-white fw-600 py-1 border"

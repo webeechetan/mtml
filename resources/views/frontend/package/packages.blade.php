@@ -18,12 +18,39 @@
                             <img class="mw-100 mx-auto mb-4" src="{{ uploaded_asset($package->image) }}" height="130">
                             <h5 class="mb-3 h5 fw-600">{{$package->name}}</h5>
                         </div>
-                        <div>
-                            Show Authenticity -A verified badge assures other members of the authenticity of your profile.
-                            Verification Badge- Display a verified badge on your profile to build trust. 
-                            Easy Verification Process - Submit your details, and our support team will verify them for accuracy. 
-                            Enhanced Credibility - Verification adds a layer of authenticity to your profile.
-                            One-Time Fee - Get verified for a one-time fee of ₹199.
+                        <ul class="list-group list-group-raw fs-18">
+                            <li class="list-group-item py-2">
+                                <i class="las la-check text-success mr-2"></i>
+                                {{ translate('Show Authenticity') }}
+                             {{-- -A verified badge assures other members of the authenticity of your profile. --}}
+                            </li>
+                            <li class="list-group-item py-2">
+                                <i class="las la-check text-success mr-2"></i>
+                                {{ translate('Verification Badge') }}
+                                {{-- - Display a verified badge on your profile to build trust.  --}}
+                               </li>
+                               <li class="list-group-item py-2">
+                                <i class="las la-check text-success mr-2"></i>
+                                {{ translate(' Easy Verification Process') }}
+                                {{-- - Submit your details, and our support team will verify them for accuracy.  --}}
+                               </li>
+                               <li class="list-group-item py-2"> 
+                                <i class="las la-check text-success mr-2"></i>
+                                {{ translate('Enhanced Credibility ') }}
+                                {{-- - Verification adds a layer of authenticity to your profile. --}}
+                                </li>
+                                <li class="list-group-item py-2">
+                                    <i class="las la-check text-success mr-2"></i>
+                                {{ translate(' One-Time Fee') }}
+                                {{-- - Get verified for a one-time fee of ₹199.</li> --}}
+                        </ul>
+                        <div class="mb-5 text-dark text-center" style="margin-top: 70px">
+                            @if ($package->id == 1)
+                                <span class="display-4 fw-600 lh-1 mb-0">{{ translate('Free') }}</span>
+                            @else
+                                <span class="display-4 fw-600 lh-1 mb-0">₹{{$package->price}}</span>
+                            @endif
+                            <span class="text-secondary d-block">{{$package->validity}} {{translate('Days')}}</span>
                         </div>
                         <div class="text-center">
                             @if ($package->id != 1)
@@ -86,7 +113,7 @@
                             @if ($package->id == 1)
                                 <span class="display-4 fw-600 lh-1 mb-0">{{ translate('Free') }}</span>
                             @else
-                                <span class="display-4 fw-600 lh-1 mb-0">{{single_price($package->price)}}</span>
+                                <span class="display-4 fw-600 lh-1 mb-0">₹{{$package->price}}</span>
                             @endif
                             <span class="text-secondary d-block">{{$package->validity}} {{translate('Days')}}</span>
                         </div>
