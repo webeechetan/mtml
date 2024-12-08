@@ -50,7 +50,7 @@
                             @else
                                 <span class="display-4 fw-600 lh-1 mb-0">₹{{$package->price}}</span>
                             @endif
-                            <span class="text-secondary d-block">{{$package->validity}} {{translate('Days')}}</span>
+                            <span class="text-secondary d-block">{{translate('One Time Fee')}}</span>
                         </div>
                         <div class="text-center">
                             @if ($package->id != 1)

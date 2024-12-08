@@ -13,7 +13,15 @@
                 <img src="{{ asset('assets/img/avatar-place.png') }}">
                 @endif
             </span>
-            <h4 class="h5 fw-600">{{ Auth::user()->first_name.' '.Auth::user()->last_name }}</h4>
+            <h4 class="h5 fw-600">
+                {{ Auth::user()->first_name.' '.Auth::user()->last_name }}
+                @php
+                    $user = Auth::user();
+                @endphp
+                @if($user->isPremiumVerified)
+                 <img src="./assets/img/logo.png" height="40px" width="40px" style="padding: 5px" title="Verified Account">
+                @endif
+            </h4>
         </div>
         <div class="text-center mb-3 px-3">
             <a href="{{ route('member_profile', Auth::user()->id) }}" class="btn btn-block btn-soft-primary">{{ translate('Public Profile') }}</a>

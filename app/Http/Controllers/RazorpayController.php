@@ -41,7 +41,7 @@ class RazorpayController extends Controller
 
             // Do something here for store payment details in database...
             if(Session::has('payment_type')){
-                if (Session::get('payment_type') == 'package_payment') {
+                if (Session::get('payment_type') == 'package_payment') { 
                     $packagePaymentController = new PackagePaymentController;
                     return $packagePaymentController->package_payment_done(Session::get('payment_data'), $payment_detalis);
                 }

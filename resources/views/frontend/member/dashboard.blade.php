@@ -56,78 +56,12 @@
 
     <div class="row gutters-5">
       
-               
-                 @if($user->isPremiumVerified)
-                 <div class="col-md-6">
-                    <div class="card">
-                 <div class="card-header">
-                    <h2 class="fs-16 mb-0">{{  translate('Account Verified') }}</h2>
-                    <img src="./assets/img/logo.png" height="30px" width="30px" style="padding: 5px">
-
-                </div>
-
-                 <div class="card-body">
-                    <div class="text-center ">
-                        <img class="mw-100 mx-auto mb-4" src="{{asset('assets/img/iconvr.png') }}" height="130">
-                        <h5 class="mb-3 h5 fw-600">Verified Account Badge</h5>
-                    </div>
-                    <ul class="list-group list-group-raw fs-15 mb-4 pb-4 border-bottom">
-                        <li class="list-group-item py-2">
-                            <i class="las la-check text-success mr-2"></i>
-                            {{ translate('Show Authenticity') }}
-                         {{-- -A verified badge assures other members of the authenticity of your profile. --}}
-                        </li>
-                        <li class="list-group-item py-2">
-                            <i class="las la-check text-success mr-2"></i>
-                            {{ translate('Verification Badge') }}
-                            {{-- - Display a verified badge on your profile to build trust.  --}}
-                           </li>
-                           <li class="list-group-item py-2">
-                            <i class="las la-check text-success mr-2"></i>
-                            {{ translate(' Easy Verification Process') }}
-                            {{-- - Submit your details, and our support team will verify them for accuracy.  --}}
-                           </li>
-                           <li class="list-group-item py-2"> 
-                            <i class="las la-check text-success mr-2"></i>
-                            {{ translate('Enhanced Credibility ') }}
-                            {{-- - Verification adds a layer of authenticity to your profile. --}}
-                            </li>
-                            <li class="list-group-item py-2">
-                                <i class="las la-check text-success mr-2"></i>
-                            {{ translate(' One-Time Fee') }}
-                            {{-- - Get verified for a one-time fee of ₹199.</li> --}}
-                    </ul>
-                    <h4 class="fs-18 mb-3">
-                      {{ translate('Package expiry date') }}:
-                      @if(package_validity($user->id))
-                        {{ $user->member->package_validity }}
-                      @else
-                          <span class="text-danger">{{translate('Expired')}}</span>
-                      @endif
-                    </h4>
-                    <a href="{{ route('packages') }}" class="btn btn-success d-inline-block">{{ translate('Upgrade Package') }}</a>
-                </div>
-            </div>
-        </div>
-                 @else 
-                 {{-- <img src="./assets/img/logo.png" height="40px" width="40px" style="padding: 5px">  --}}
-                  @endif
-               
-           
-
-
-
-
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <h2 class="fs-16 mb-0">{{  translate('Current package') }}</h2>
                 </div>
-                 @if($user->isPremiumVerified)
-                 <img src="./assets/img/logo.png" height="40px" width="40px" style="padding: 5px">
-                 @else
-                 {{-- <img src="./assets/img/logo.png" height="40px" width="40px" style="padding: 5px">  --}}
-                 @endif
+                 
                 <div class="card-body">
                     <div class="text-center mb-4 ">
                         <img class="mw-100 mx-auto mb-4" src="{{ uploaded_asset($user->member->package->image) }}" height="130">

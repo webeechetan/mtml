@@ -163,7 +163,9 @@ class PackagePaymentController extends Controller
 
         $member = Member::where('user_id', $user->id)->first();
         $package = Package::where('id', $payment_data['package_id'])->first();
-        $member->current_package_id = $package->id;
+        if($payment_data['package_id'] != 11){
+            $member->current_package_id = $package->id;
+        }
         $member->remaining_interest = $member->remaining_interest + $package->express_interest;
         $member->remaining_photo_gallery = $member->remaining_photo_gallery + $package->photo_gallery;
         $member->remaining_contact_view = $member->remaining_contact_view + $package->contact;
