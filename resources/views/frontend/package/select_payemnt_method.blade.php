@@ -10,29 +10,74 @@
                             <img class="mw-100 mx-auto mb-4" src="{{ uploaded_asset($package->image) }}" height="130">
                             <h5 class="mb-3 h5 fw-600">{{$package->name}}</h5>
                         </div>
-                        <ul class="list-group list-group-raw fs-15 mb-5">
+                        @if($package->id == 11)
+                        <ul class="list-group list-group-raw fs-15">
                             <li class="list-group-item py-2">
                                 <i class="las la-check text-success mr-2"></i>
-                                {{ $package->express_interest }} {{ translate('Express Interests') }}
+                                {{ translate('Show Authenticity') }}
+                             {{-- -A verified badge assures other members of the authenticity of your profile. --}}
                             </li>
                             <li class="list-group-item py-2">
                                 <i class="las la-check text-success mr-2"></i>
-                                {{ $package->photo_gallery }} {{ translate('Gallery Photo Upload') }}
-                            </li>
-                            <li class="list-group-item py-2">
+                                {{ translate('Verification Badge') }}
+                                {{-- - Display a verified badge on your profile to build trust.  --}}
+                               </li>
+                               <li class="list-group-item py-2">
                                 <i class="las la-check text-success mr-2"></i>
-                                {{ $package->contact }} {{ translate('Contact Info View') }}
-                            </li>
-                            <li class="list-group-item py-2 text-line-through">
-                                @if( $package->auto_profile_match == 0 )
-                                    <i class="las la-times text-danger mr-2"></i>
-                                    <del class="opacity-60">{{ translate('Show Auto Profile Match') }}</del>
-                                @else
+                                {{ translate(' Easy Verification Process') }}
+                                {{-- - Submit your details, and our support team will verify them for accuracy.  --}}
+                               </li>
+                               <li class="list-group-item py-2"> 
+                                <i class="las la-check text-success mr-2"></i>
+                                {{ translate('Enhanced Credibility ') }}
+                                {{-- - Verification adds a layer of authenticity to your profile. --}}
+                                </li>
+                                <li class="list-group-item py-2">
                                     <i class="las la-check text-success mr-2"></i>
-                                    {{ translate('Show Auto Profile Match') }}
-                                @endif
-                            </li>
+                                {{ translate(' One-Time Fee') }}
+                                {{-- - Get verified for a one-time fee of ₹199.</li> --}}
                         </ul>
+
+                        
+                        @else
+                            <ul class="list-group list-group-raw fs-15 mb-5">
+                                <li class="list-group-item py-2">
+                                    <i class="las la-check text-success mr-2"></i>
+                                    {{ $package->express_interest }} {{ translate('Express Interests') }}
+                                </li>
+                                <li class="list-group-item py-2">
+                                    <i class="las la-check text-success mr-2"></i>
+                                    {{ $package->photo_gallery }} {{ translate('Gallery Photo Upload') }}
+                                </li>
+                                {{-- <li class="list-group-item py-2">
+                                    <i class="las la-check text-success mr-2"></i>
+                                    {{ $package->contact }} {{ translate('Contact Info View') }}
+                                </li> --}}
+                                @if(get_setting('profile_picture_privacy') == 'only_me')
+                                <li class="list-group-item py-2">
+                                    <i class="las la-check text-success mr-2"></i>
+                                    {{ $package->profile_image_view }} {{ translate('Profile Image View') }}
+                                </li>
+                                @endif
+                                @if(get_setting('gallery_image_privacy') == 'only_me')
+                                <li class="list-group-item py-2">
+                                    <i class="las la-check text-success mr-2"></i>
+                                    {{ $package->gallery_image_view }} {{ translate('Gallery Image View') }}
+                                </li>
+                                @endif
+                                <li class="list-group-item py-2 text-line-through">
+                                    @if( $package->auto_profile_match == 0 )
+                                        <i class="las la-times text-danger mr-2"></i>
+                                        <del class="opacity-60">{{ translate('Show Auto Profile Match') }}</del>
+                                    @else
+                                        <i class="las la-check text-success mr-2"></i>
+                                        {{ translate('Show Auto Profile Match') }}
+                                    @endif
+                                </li>
+                            </ul>
+                        
+                            
+                        @endif
                         <div class="mb-5 text-dark text-center">
                             @php
                               $package_price = $package->price;
@@ -51,14 +96,17 @@
                                     }
                                     $package_price = $package_price - $discount;
                                   @endphp
-                                  <del class="opacity-60">{{ single_price($package->price) }}</del>
+                                  <del class="opacity-60">₹{{ ($package->price) }}</del>
                                   <br>
-                                  <span class="display-4 fw-600 lh-1 mb-0">{{single_price($package_price)}}</span>
+                                  <span class="display-4 fw-600 lh-1 mb-0">₹{{($package_price)}}</span>
                                 @else
-                                  <span class="display-4 fw-600 lh-1 mb-0">{{single_price($package_price)}}</span>
+                                  <span class="display-4 fw-600 lh-1 mb-0">₹{{($package_price)}}</span>
                                 @endif
                             @endif
-                            <span class="text-secondary d-block">{{$package->validity}} {{translate('Days')}}</span>
+                            @if ($package->id == 11)
+                                @else
+                                <span class="text-secondary d-block">{{$package->validity}} {{translate('Days')}}</span>
+                            @endif
                         </div>
                     </div>
                 </div>

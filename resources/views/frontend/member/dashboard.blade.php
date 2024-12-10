@@ -76,10 +76,10 @@
                             <i class="las la-check text-success mr-2"></i>
                             {{ $user->member->package->photo_gallery }} {{ translate('Gallery Photo Upload') }}
                         </li>
-                        <li class="list-group-item py-2">
+                        {{-- <li class="list-group-item py-2">
                             <i class="las la-check text-success mr-2"></i>
                             {{ $user->member->package->contact }} {{ translate('Contact Info View') }}
-                        </li>
+                        </li> --}}
                         @if($profile_picture_privacy == 'only_me')
                             <li class="list-group-item py-2">
                                 <i class="las la-check text-success mr-2"></i>
