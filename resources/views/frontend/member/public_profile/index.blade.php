@@ -680,22 +680,6 @@
                                         <div class="col-md-6">
                                             <div class="border p-3">
                                                 @if (Auth::user()->id != $user->id)
-                                                    @if ($user->phone != null)
-                                                        <div class="d-flex mb-3">
-                                                            <i class="las la-phone text-primary la-2x mr-3"></i>
-                                                            <div>
-                                                                <div class="fs-15 fw-600 mb-1">
-                                                                    {{ translate('Contact Number') }}
-                                                                </div>
-                                                                @if (empty($view_contact))
-                                                                    <div class="fw-400">+xx xxx xxx xxx</div>
-                                                                @else
-                                                                    <div class="fw-400">{{ $user->phone }}
-                                                                    </div>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                    @endif
                                                     @if ($user->email != null)
                                                         <div class="d-flex">
                                                             <i class="las la-envelope text-primary la-2x mr-3"></i>
@@ -721,14 +705,7 @@
                                                         <br>
                                                     @endif
                                                 @else
-                                                    <div class="d-flex mb-3">
-                                                        <i class="las la-phone text-primary la-2x mr-3"></i>
-                                                        <div>
-                                                            <div class="fs-15 fw-600 mb-1">
-                                                                {{ translate('Contact Number') }}</div>
-                                                            <div class="fw-400">{{ $user->phone }}</div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="d-flex">
                                                         <i class="las la-envelope text-primary la-2x mr-3"></i>
                                                         <div>
