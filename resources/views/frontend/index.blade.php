@@ -268,67 +268,6 @@
                 </div>
 
                 <!-- search  -->
-                @if (Auth::check() && Auth::user()->user_type == 'member')
-                    <div class="p-4 bg-white rounded-top border-bottom"
-                        style="box-shadow: 0 -25px 50px -12px rgb(0 0 0 / 25%);">
-                        <div class="row">
-                            <div class="col-xl-10 mx-auto">
-                                <form action="{{ route('member.listing') }}" method="get">
-                                    <div class="row gutters-5">
-                                        <div class="col-lg">
-                                            <div class="form-group mb-3">
-                                                <label class="form-label"
-                                                    for="name">Age From</label>
-                                                <input type="number" name="age_from" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg">
-                                            <div class="form-group mb-3">
-                                                <label class="form-label" for="name">To</label>
-                                                <input type="number" name="age_to" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg">
-                                            <div class="form-group mb-3">
-                                                <label class="form-label"
-                                                    for="name">{{ translate('Religion') }}</label>
-                                                @php $religions = \App\Models\Religion::all(); @endphp
-                                                <select name="religion_id" id="religion_id"
-                                                    class="form-control aiz-selectpicker" data-live-search="true"
-                                                    data-container="body">
-                                                    <option value="">{{ translate('Choose One') }}</option>
-                                                    @foreach ($religions as $religion)
-                                                        <option value="{{ $religion->id }}"> {{ $religion->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg">
-                                            <div class="form-group mb-3">
-                                                <label class="form-label"
-                                                    for="name">{{ translate('Mother-Tongue') }}</label>
-                                                @php $mother_tongues = \App\Models\MemberLanguage::all(); @endphp
-                                                <select name="mother_tongue" class="form-control aiz-selectpicker"
-                                                    data-live-search="true" data-container="body">
-                                                    <option value="">{{ translate('Select One') }}</option>
-                                                    @foreach ($mother_tongues as $mother_tongue_select)
-                                                        <option value="{{ $mother_tongue_select->id }}">
-                                                            {{ $mother_tongue_select->name }} </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg">
-                                            <button type="submit"
-                                                class="btn btn-block btn-primary mt-4">{{ translate('Search') }}</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                @endif
 
             </div>
         </section>

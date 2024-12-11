@@ -8,7 +8,7 @@
           @csrf
           <div class="form-group row">
               <div class="col-md-6">
-                  <label for="height">{{translate('Height')}} ({{ translate('In Feet') }})</label>
+                  <label for="height">{{translate('Height')}} ({{ translate('In Feet') }}) <span class="text-danger">*</span> </label>
                   <input type="number" name="height" value="{{ !empty($member->physical_attributes->height) ? $member->physical_attributes->height : "" }}" step="any" class="form-control" placeholder="{{translate('Height')}}" required>
                   @error('height')
                       <small class="form-text text-danger">{{ $message }}</small>
@@ -16,7 +16,7 @@
               </div>
               <div class="col-md-6">
                   <label for="weight">{{translate('Weight')}} ({{ translate('In Kg')}})</label>
-                  <input type="number" name="weight" value="{{ !empty($member->physical_attributes->weight) ? $member->physical_attributes->weight : "" }}" step="any" placeholder="{{ translate('Weight') }}" class="form-control" required>
+                  <input type="number" name="weight" value="{{ !empty($member->physical_attributes->weight) ? $member->physical_attributes->weight : "" }}" step="any" placeholder="{{ translate('Weight') }}" class="form-control" >
                   @error('weight')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
@@ -26,14 +26,14 @@
           <div class="form-group row">
               <div class="col-md-6">
                   <label for="eye_color">{{translate('Eye color')}}</label>
-                  <input type="text" name="eye_color" value="{{ !empty($member->physical_attributes->eye_color) ? $member->physical_attributes->eye_color : "" }}" class="form-control" placeholder="{{translate('Eye Color')}}" required>
+                  <input type="text" name="eye_color" value="{{ !empty($member->physical_attributes->eye_color) ? $member->physical_attributes->eye_color : "" }}" class="form-control" placeholder="{{translate('Eye Color')}}" >
                   @error('eye_color')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
               </div>
               <div class="col-md-6">
                   <label for="hair_color">{{translate('Hair Color')}}</label>
-                  <input type="text" name="hair_color" value="{{ !empty($member->physical_attributes->hair_color) ? $member->physical_attributes->hair_color : "" }}" placeholder="{{ translate('Hair Color') }}" class="form-control" required>
+                  <input type="text" name="hair_color" value="{{ !empty($member->physical_attributes->hair_color) ? $member->physical_attributes->hair_color : "" }}" placeholder="{{ translate('Hair Color') }}" class="form-control" >
                   @error('hair_color')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
@@ -43,14 +43,14 @@
           <div class="form-group row">
               <div class="col-md-6">
                   <label for="complexion">{{translate('Complexion')}}</label>
-                  <input type="text" name="complexion" value="{{ !empty($member->physical_attributes->complexion) ? $member->physical_attributes->complexion : "" }}" class="form-control" placeholder="{{translate('Complexion')}}" required>
+                  <input type="text" name="complexion" value="{{ !empty($member->physical_attributes->complexion) ? $member->physical_attributes->complexion : "" }}" class="form-control" placeholder="{{translate('Complexion')}}" >
                   @error('complexion')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
               </div>
               <div class="col-md-6">
                   <label for="blood_group">{{translate('Blood Group')}}</label>
-                  <input type="text" name="blood_group" value="{{ !empty($member->physical_attributes->blood_group) ? $member->physical_attributes->blood_group : "" }}" placeholder="{{ translate('Blood Group') }}" class="form-control" required>
+                  <input type="text" name="blood_group" value="{{ !empty($member->physical_attributes->blood_group) ? $member->physical_attributes->blood_group : "" }}" placeholder="{{ translate('Blood Group') }}" class="form-control" >
                   @error('blood_group')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
@@ -60,14 +60,14 @@
           <div class="form-group row">
               <div class="col-md-6">
                   <label for="body_type">{{translate('Body Type')}}</label>
-                  <input type="text" name="body_type" value="{{ !empty($member->physical_attributes->body_type) ? $member->physical_attributes->body_type : "" }}" class="form-control" placeholder="{{translate('Body Type')}}" required>
+                  <input type="text" name="body_type" value="{{ !empty($member->physical_attributes->body_type) ? $member->physical_attributes->body_type : "" }}" class="form-control" placeholder="{{translate('Body Type')}}" >
                   @error('body_type')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror
               </div>
               <div class="col-md-6">
                   <label for="body_art">{{translate('Body Art')}}</label>
-                  <input type="text" name="body_art" value="{{ !empty($member->physical_attributes->body_art) ? $member->physical_attributes->body_art : "" }}" placeholder="{{ translate('Body Art') }}" class="form-control" required>
+                  <input type="text" name="body_art" value="{{ !empty($member->physical_attributes->body_art) ? $member->physical_attributes->body_art : "" }}" placeholder="{{ translate('Body Art') }}" class="form-control" >
                   @error('body_art')
                       <small class="form-text text-danger">{{ $message }}</small>
                   @enderror

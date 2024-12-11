@@ -75,13 +75,11 @@ class LifestyleController extends Controller
              'diet'         => [ 'max:255'],
              'drink'        => [ 'max:255'],
              'smoke'        => [ 'max:255'],
-             'living_with'  => [ 'max:255'],
          ];
          $this->messages = [
              'diet.max'             => translate('Max 255 characters'),
              'drink.max'            => translate('Max 255 characters'),
              'smoke.max'            => translate('Max 255 characters'),
-             'living_with.max'      => translate('Max 255 characters'),
          ];
 
          $rules = $this->rules;
@@ -102,7 +100,6 @@ class LifestyleController extends Controller
          $lifestyle->diet          = $request->diet;
          $lifestyle->drink         = $request->drink;
          $lifestyle->smoke         = $request->smoke;
-         $lifestyle->living_with   = $request->living_with;
 
          if($lifestyle->save()){
              flash(translate('Lifestyle info has been updated successfully'))->success();

@@ -59,7 +59,10 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="sibling">{{translate('Sibling')}}</label>
-                    <input type="text" name="sibling" value="{{ !empty($member->families->sibling) ? $member->families->sibling : "" }}" class="form-control" placeholder="{{translate('Sibling')}}" required>
+                    <input type="number" min="1"
+                    step="1"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    title="Numbers only" name="sibling" value="{{ !empty($member->families->sibling) ? $member->families->sibling : "" }}" class="form-control" placeholder="{{translate('Sibling')}}" >
                     @error('sibling')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror

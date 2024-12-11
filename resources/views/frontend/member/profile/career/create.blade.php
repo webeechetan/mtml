@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-md-3 col-form-label">{{translate('Salary')}}</label>
+            <label class="col-md-3 col-form-label">{{translate('Salary')}} (Yearly)</label>
             <div class="col-md-9">
                 <input type="text" name="salary"  placeholder="{{ translate('Salary') }}" class="form-control">
             </div>

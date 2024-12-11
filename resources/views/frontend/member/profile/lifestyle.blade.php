@@ -13,6 +13,13 @@
                     <select class="form-control aiz-selectpicker" name="diet" required>
                         <option value="Veg" @if($user_diet ==  'Veg') selected @endif >{{translate('Veg')}}</option>
                         <option value="Non-Veg" @if($user_diet ==  'Non-Veg') selected @endif >{{translate('Non-Veg')}}</option>
+                        <option value="Eggetarian" @if($user_diet ==  'Eggetarian') selected @endif >{{translate('Eggetarian')}}</option>
+                        {{-- jain --}}
+                        <option value="Jain" @if($user_diet ==  'Jain') selected @endif >{{translate('Jain')}}</option>
+                        {{-- vegan --}}
+                        <option value="Vegan" @if($user_diet ==  'Vegan') selected @endif >{{translate('Vegan')}}</option>
+                        {{-- ocassionally non-veg --}}
+                        <option value="Ocassionally Non-Veg" @if($user_diet ==  'Ocassionally Non-Veg') selected @endif >{{translate('Ocassionally Non-Veg')}}</option>
                         @error('diet')
                             <small class="form-text text-danger">{{ $message }}</small>
                         @enderror

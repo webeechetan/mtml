@@ -9,16 +9,16 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="general">{{translate('General Requirement')}}</label>
-                    <input type="text" name="general" value="{{ !empty($member->partner_expectations->general) ? $member->partner_expectations->general : "" }}" class="form-control" placeholder="{{translate('General')}}" required>
+                    <input type="text" name="general" value="{{ !empty($member->partner_expectations->general) ? $member->partner_expectations->general : "" }}" class="form-control" placeholder="{{translate('General')}}" >
                 </div>
                 <div class="col-md-6">
                     <label for="age">Age</label>
-                    <input type="text" name="age" value="{{ !empty($member->partner_expectations->age) ? $member->partner_expectations->age : "" }}" class="form-control" placeholder="{{translate('Age')}}" required>
+                    <input type="text" name="age" value="{{ !empty($member->partner_expectations->age) ? $member->partner_expectations->age : "" }}" class="form-control" placeholder="{{translate('Age')}}" >
                 </div>
                 {{-- <div class="col-md-6">
                     <label for="residence_country_id">{{translate('Residence Country')}}</label>
                     @php $partner_residence_country = !empty($member->partner_expectations->residence_country_id) ? $member->partner_expectations->residence_country_id : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="residence_country_id" data-live-search="true" required>
+                    <select class="form-control aiz-selectpicker" name="residence_country_id" data-live-search="true" >
                         @foreach ($countries as $country)
                             <option value="{{$country->id}}" @if($country->id == $partner_residence_country) selected @endif >{{$country->name}}</option>
                         @endforeach
@@ -32,14 +32,14 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="partner_height">{{translate('Min Height')}}  ({{ translate('In Feet') }})</label>
-                    <input type="number" name="partner_height" value="{{ !empty($member->partner_expectations->height) ? $member->partner_expectations->height : "" }}" step="any"  placeholder="{{ translate('Height') }}" class="form-control" required>
+                    <input type="number" name="partner_height" value="{{ !empty($member->partner_expectations->height) ? $member->partner_expectations->height : "" }}" step="any"  placeholder="{{ translate('Height') }}" class="form-control" >
                     @error('partner_height')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="col-md-6">
                     <label for="partner_weight">{{translate('Max Weight')}}  ({{ translate('In Kg') }})</label>
-                    <input type="number" name="partner_weight" value="{{ !empty($member->partner_expectations->weight) ? $member->partner_expectations->weight : "" }}" step="any" class="form-control" placeholder="{{translate('Weight')}}" required>
+                    <input type="number" name="partner_weight" value="{{ !empty($member->partner_expectations->weight) ? $member->partner_expectations->weight : "" }}" step="any" class="form-control" placeholder="{{translate('Weight')}}" >
                     @error('partner_weight')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
@@ -50,7 +50,7 @@
                 <div class="col-md-6">
                     <label for="partner_marital_status">{{translate('Marital-Status')}}</label>
                     @php $partner_marital_status_id = !empty($member->partner_expectations->marital_status_id) ? $member->partner_expectations->marital_status_id : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="partner_marital_status" data-live-search="true" required>
+                    <select class="form-control aiz-selectpicker" name="partner_marital_status" data-live-search="true" >
                         <option value="">{{ translate('Choose One') }}</option>
                         @foreach ($marital_statuses as $marital_status)
                         <option value="{{$marital_status->id}}" @if($partner_marital_status_id == $marital_status->id) selected @endif>{{$marital_status->name}}</option>
@@ -64,7 +64,7 @@
                 <div class="col-md-6">
                     <label for="partner_children_acceptable">{{translate('Children Acceptable')}}</label>
                     @php $children_acceptable = !empty($member->partner_expectations->children_acceptable) ? $member->partner_expectations->children_acceptable : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="partner_children_acceptable" required>
+                    <select class="form-control aiz-selectpicker" name="partner_children_acceptable" >
                         <option value="">{{ translate('Choose One') }}</option>
                         <option value="yes" @if($children_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
                         <option value="no" @if($children_acceptable ==  'no') selected @endif >{{translate('No')}}</option>
@@ -78,7 +78,7 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="partner_religion_id">{{translate('Religion')}}</label>
-                    <select class="form-control aiz-selectpicker" name="partner_religion_id" id="partner_religion_id" data-live-search="true" required>
+                    <select class="form-control aiz-selectpicker" name="partner_religion_id" id="partner_religion_id" data-live-search="true" >
                         <option value="">{{translate('Select One')}}</option>
                         @foreach ($religions as $religion)
                             <option value="{{$religion->id}}" @if($religion->id == $partner_religion_id) selected @endif> {{ $religion->name }} </option>
@@ -205,7 +205,7 @@
                 <div class="col-md-6">
                     <label for="language_id">{{translate('Language')}}</label>
                     @php $partner_language = !empty($member->partner_expectations->language_id) ? $member->partner_expectations->language_id : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="language_id" data-live-search="true" required>
+                    <select class="form-control aiz-selectpicker" name="language_id" data-live-search="true" >
                         <option value="">{{translate('Select One')}}</option>
                         @foreach ($languages as $language)
                             <option value="{{$language->id}}" @if($language->id == $partner_language) selected @endif> {{ $language->name }} </option>
@@ -218,14 +218,14 @@
 
                 <div class="col-md-6">
                     {{-- <label for="pertner_complexion">{{translate('Complexion')}}</label>
-                    <input type="text" name="pertner_complexion" value="{{ !empty($member->partner_expectations->complexion) ? $member->partner_expectations->complexion : "" }}" class="form-control" placeholder="{{translate('Complexion')}}" required>
+                    <input type="text" name="pertner_complexion" value="{{ !empty($member->partner_expectations->complexion) ? $member->partner_expectations->complexion : "" }}" class="form-control" placeholder="{{translate('Complexion')}}" >
                     @error('pertner_complexion')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror --}}
 
                     <label for="partner_diet">{{translate('Diet')}}</label>
                     @php $user_partner_diet = !empty($member->partner_expectations->diet) ? $member->partner_expectations->diet : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="partner_diet" data-live-search="true" required>
+                    <select class="form-control aiz-selectpicker" name="partner_diet" data-live-search="true" >
                         <option value="Veg" @if($user_partner_diet ==  'Veg') selected @endif >{{translate('Veg')}}</option>
                         <option value="Non-Veg" @if($user_partner_diet ==  'Non-Veg') selected @endif >{{translate('Non-Veg')}}</option>
                         @error('partner_diet')
@@ -269,7 +269,7 @@
 
                     <label for="smoking_acceptable">{{translate('Smoking Acceptable')}}</label>
                     @php $partner_smoking_acceptable = !empty($member->partner_expectations->smoking_acceptable) ? $member->partner_expectations->smoking_acceptable : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="smoking_acceptable" required>
+                    <select class="form-control aiz-selectpicker" name="smoking_acceptable" >
                         <option value="yes" @if($partner_smoking_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
                         <option value="no" @if($partner_smoking_acceptable ==  'no') selected @endif >{{translate('No')}}</option>
                         <option value="Occasionally" @if($partner_smoking_acceptable ==  'Occasionally') selected @endif >{{translate('Occasionally')}}</option>
@@ -281,7 +281,7 @@
                 <div class="col-md-6">
                     <label for="drinking_acceptable">{{translate('Drinking Acceptable')}}</label>
                     @php $partner_drinking_acceptable = !empty($member->partner_expectations->drinking_acceptable) ? $member->partner_expectations->drinking_acceptable : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="drinking_acceptable" required>
+                    <select class="form-control aiz-selectpicker" name="drinking_acceptable" >
                         <option value="yes" @if($partner_drinking_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
                         <option value="no" @if($partner_drinking_acceptable ==  'no') selected @endif >{{translate('No')}}</option>
                         <option value="Occasionally" @if($partner_drinking_acceptable ==  'Occasionally') selected @endif >{{translate('Occasionally')}}</option>
@@ -303,7 +303,7 @@
                 <div class="col-md-6">
                     <label for="partner_manglik">{{translate('Manglik')}}</label>
                     @php $partner_manglik = !empty($member->partner_expectations->manglik) ? $member->partner_expectations->manglik : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="partner_manglik" required>
+                    <select class="form-control aiz-selectpicker" name="partner_manglik" >
                         <option value="yes" @if($partner_manglik ==  'yes') selected @endif >{{translate('Yes')}}</option>
                         <option value="no" @if($partner_manglik ==  'no') selected @endif >{{translate('No')}}</option>
                         <option value="dose_not_matter" @if($partner_manglik ==  'dose_not_matter') selected @endif >{{translate('Dose not matter')}}</option>
@@ -317,7 +317,7 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="partner_country_id">{{translate('Preferred Country')}}</label>
-                    <select class="form-control aiz-selectpicker" name="partner_country_id" id="partner_country_id" data-live-search="true" required>
+                    <select class="form-control aiz-selectpicker" name="partner_country_id" id="partner_country_id" data-live-search="true" >
                         <option value="">{{translate('Select One')}}</option>
                         @foreach ($countries as $country)
                             <option value="{{$country->id}}" @if($country->id == $partner_country_id) selected @endif>{{$country->name}}</option>

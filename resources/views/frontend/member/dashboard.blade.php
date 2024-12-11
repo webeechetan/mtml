@@ -20,13 +20,13 @@
                 <div class="opacity-50">{{ translate('Remaining') }} <br> {{ translate('Interest') }}</div>
             </div>
         </div>
-        <div class="col mx-auto mb-3" >
+        {{-- <div class="col mx-auto mb-3" >
             <div class="bg-light rounded overflow-hidden text-center p-3">
                 <i class="las la-phone la-2x mb-3 text-primary-grad"></i>
                 <div class="h4 fw-700 text-primary-grad">{{ get_remaining_package_value($user->id,'remaining_contact_view') }}</div>
                 <div class="opacity-50 ">{{ translate('Remaining') }} <br> {{ translate('Contact View') }}</div>
             </div>
-        </div>
+        </div> --}}
         <div class="col mx-auto mb-3" >
             <div class="bg-light rounded overflow-hidden text-center p-3">
                 <i class="las la-image la-2x mb-3 text-primary-grad"></i>

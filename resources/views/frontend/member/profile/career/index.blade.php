@@ -11,11 +11,11 @@
     <div class="card-body">
         <table class="table aiz-table">
           <tr>
-              <th>{{translate('designation')}}</th>
-              <th>{{translate('company')}}</th>
+              <th>Designation</th>
+              <th>Company</th>
               <th data-breakpoints="md">{{translate('Start')}}</th>
               <th data-breakpoints="md">{{translate('End')}}</th>
-              <th data-breakpoints="md">{{translate('Income')}}</th>
+              <th data-breakpoints="md">{{translate('Income')}} (Yearly)</th>
               <th data-breakpoints="md">{{translate('Working With')}}</th>
               <th data-breakpoints="md">{{translate('Status')}}</th>
               <th data-breakpoints="md" class="text-right">{{translate('Options')}}</th>

@@ -72,15 +72,7 @@ class PhysicalAttributeController extends Controller
      public function update(Request $request, $id)
      {
          $this->rules = [
-             'height'       => [ 'required','numeric'],
-             'weight'       => [ 'required','numeric'],
-             'eye_color'    => [ 'required','max:50'],
-             'hair_color'   => [ 'required','max:50'],
-             'complexion'   => [ 'required','max:50'],
-             'blood_group'  => [ 'required','max:3'],
-             'body_type'    => [ 'required','max:50'],
-             'body_art'     => [ 'required','max:50'],
-             'disability'   => [ 'max:255'],
+             'height'       => [ 'required','numeric']
          ];
          $this->messages = [
              'height.required'      => translate('Height is required'),
