@@ -1349,7 +1349,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <th class="py-1">
-                                                                    Patti</th>
+                                                                    khat/Patti</th>
                                                                 <td class="py-1">
                                                                     {{ !empty($user->spiritual_backgrounds->patti) ? $user->spiritual_backgrounds->patti : '' }}
                                                                 </td>

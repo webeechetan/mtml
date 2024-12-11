@@ -223,7 +223,7 @@
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror --}}
 
-                    <label for="partner_diet">{{translate('Diet')}}</label>
+                    <label for="partner_diet">{{translate('Diet')}}</label> <span class="text-danger">*</span>
                     @php $user_partner_diet = !empty($member->partner_expectations->diet) ? $member->partner_expectations->diet : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="partner_diet" data-live-search="true" >
                         <option value="Veg" @if($user_partner_diet ==  'Veg') selected @endif >{{translate('Veg')}}</option>
@@ -267,7 +267,7 @@
                 <div class="col-md-6">
                     
 
-                    <label for="smoking_acceptable">{{translate('Smoking Acceptable')}}</label>
+                    <label for="smoking_acceptable">{{translate('Smoking Acceptable')}}</label> <span class="text-danger">*</span>
                     @php $partner_smoking_acceptable = !empty($member->partner_expectations->smoking_acceptable) ? $member->partner_expectations->smoking_acceptable : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="smoking_acceptable" >
                         <option value="yes" @if($partner_smoking_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
@@ -279,7 +279,7 @@
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <label for="drinking_acceptable">{{translate('Drinking Acceptable')}}</label>
+                    <label for="drinking_acceptable">{{translate('Drinking Acceptable')}}</label> <span class="text-danger">*</span>
                     @php $partner_drinking_acceptable = !empty($member->partner_expectations->drinking_acceptable) ? $member->partner_expectations->drinking_acceptable : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="drinking_acceptable" >
                         <option value="yes" @if($partner_drinking_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>

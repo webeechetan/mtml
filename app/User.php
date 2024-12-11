@@ -188,5 +188,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(Education::class);
     }
+    public function careers()
+    {
+        return $this->hasOne(Career::class);
+    }
 
 }

@@ -494,7 +494,7 @@
                                     <img class="mw-100 mx-auto mb-4" src="{{ uploaded_asset($package->image) }}" height="130">
                                     <h5 class="mb-3 h5 fw-600">{{$package->name}}</h5>
                                 </div>
-                                <ul class="list-group list-group-raw fs-18">
+                                <ul class="list-group list-group-raw fs-15">
                                     <li class="list-group-item py-2">
                                         <i class="las la-check text-success mr-2"></i>
                                         {{ translate('Show Authenticity') }}
@@ -520,7 +520,7 @@
                                         {{ translate(' One-Time Fee') }}
                                         {{-- - Get verified for a one-time fee of ₹199.</li> --}}
                                 </ul>
-                                <div class="mb-5 text-dark text-center" style="margin-top: 70px">
+                                <div class="mb-5 text-dark text-center" style="margin-top: 50px">
                                     @if ($package->id == 1)
                                         <span class="display-4 fw-600 lh-1 mb-0">{{ translate('Free') }}</span>
                                     @else
@@ -559,10 +559,10 @@
                                         <i class="las la-check text-success mr-2"></i>
                                         {{ $package->photo_gallery }} {{ translate('Gallery Photo Upload') }}
                                     </li>
-                                    <li class="list-group-item py-2">
+                                    {{-- <li class="list-group-item py-2">
                                         <i class="las la-check text-success mr-2"></i>
                                         {{ $package->contact }} {{ translate('Contact Info View') }}
-                                    </li>
+                                    </li> --}}
                                     @if(get_setting('profile_picture_privacy') == 'only_me')
                                     <li class="list-group-item py-2">
                                         <i class="las la-check text-success mr-2"></i>
