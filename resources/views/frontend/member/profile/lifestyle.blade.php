@@ -8,7 +8,7 @@
             @csrf
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label for="diet">{{translate('Diet')}}</label>
+                    <label for="diet">{{translate('Diet')}}</label> <span class="text-danger">*</span>
                     @php $user_diet = !empty($member->lifestyles->diet) ? $member->lifestyles->diet : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="diet" required>
                         <option value="Veg" @if($user_diet ==  'Veg') selected @endif >{{translate('Veg')}}</option>
@@ -19,7 +19,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="drink">{{translate('Drink')}}</label>
+                    <label for="drink">{{translate('Drink')}}</label> <span class="text-danger">*</span>
                     @php $user_drink = !empty($member->lifestyles->drink) ? $member->lifestyles->drink : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="drink" required>
                         <option value="Yes" @if($user_drink ==  'Yes') selected @endif >{{translate('Yes')}}</option>
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label for="smoke">{{translate('Smoke')}}</label>
+                    <label for="smoke">{{translate('Smoke')}}</label> <span class="text-danger">*</span>
                     @php $user_smoke = !empty($member->lifestyles->smoke) ? $member->lifestyles->smoke : ""; @endphp
                     <select class="form-control aiz-selectpicker" name="smoke" required>
                         <option value="Yes" @if($user_smoke ==  'Yes') selected @endif >{{translate('Yes')}}</option>

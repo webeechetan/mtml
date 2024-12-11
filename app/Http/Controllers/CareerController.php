@@ -16,6 +16,7 @@ class CareerController extends Controller
             'company'      => [ 'required','max:255'],
             'career_start' => [ 'required','numeric'],
             'career_end'   => [ 'numeric', 'nullable'],
+            'working_with'   => [ 'required', 'max:255'],
         ];
     }
     /**

@@ -92,7 +92,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                     <td class="py-1"><span>Patti</span></td>
+                                                     <td class="py-1"><span>Khat/Patti</span></td>
                                                     <td class="py-1 fw-400">
                                                         @if (!empty($user->spiritual_backgrounds->patti))
                                                             {{ $user->spiritual_backgrounds->patti }}
@@ -153,12 +153,12 @@
                                                            {{ $user->educations->degree }}
                                                        @endif
                                                    </td>
-                                                   {{-- <td class="py-1"><span>{{ translate('Smoke') }}</span></td>
+                                                   <td class="py-1"><span>{{ translate('Working With') }}</span></td>
                                                    <td class="py-1 fw-400">
-                                                       @if (!empty($user->lifestyles->smoke))
-                                                           {{ $user->lifestyles->smoke }}
+                                                       @if (!empty($user->careers->working_with))
+                                                           {{ $user->careers->working_with }}
                                                        @endif
-                                                   </td> --}}
+                                                   </td>
                                                </tr>
                                                 
                                             </table>
