@@ -144,7 +144,6 @@
                             </span>
                             <span class="d-none d-md-block">
                                 <span class="d-block fw-500">{{Auth::user()->first_name.' '.Auth::user()->last_name}}</span>
-                                <span class="d-block small opacity-60">{{Auth::user()->user_type}}</span>
                             </span>
                         </span>
                     </a>
