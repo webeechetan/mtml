@@ -58,9 +58,7 @@
                                         </span>
                                         <div class="px-md-4 p-3 flex-grow-1">
                                             <h2 class="h6 fw-600 fs-18 text-black mb-1">
-                                                @if($user->membership == 2)
-                                                {{ $user->first_name . ' ' . $user->last_name }}</h2>
-                                                @endif
+                                               
                                             <div class="mb-2 fs-12">
                                                 <span class="opacity-60">{{ translate('Member ID: ') }}</span>
                                                 <span class="ml-4 text-primary">{{ $user->code }}</span>
