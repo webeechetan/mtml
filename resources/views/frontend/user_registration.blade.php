@@ -8,7 +8,7 @@
 				<div class="card">
 					<div class="card-body">
 
-						<div class="mb-5 text-center">
+						<div class="mb-5 text-center"> 
 							<h1 class="h3 text-primary mb-0">{{ translate('Create Your Account') }}</h1>
 							<p>{{ translate('Fill out the form to get started') }}.</p>
 						</div>
