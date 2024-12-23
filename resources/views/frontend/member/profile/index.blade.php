@@ -58,6 +58,21 @@
     <!-- Basic Information -->
     @include('frontend.member.profile.basic_info')
 
+     <!-- Social Background -->
+     @php
+        $member_religion_id   = !empty($member->spiritual_backgrounds->religion_id) ? $member->spiritual_backgrounds->religion_id : "";
+        $member_caste_id      = !empty($member->spiritual_backgrounds->caste_id) ? $member->spiritual_backgrounds->caste_id : "";
+        $member_sub_caste_id  = !empty($member->spiritual_backgrounds->sub_caste_id) ? $member->spiritual_backgrounds->sub_caste_id : "";
+    @endphp
+    @if(get_setting('member_spiritual_and_social_background_section') == 'on')
+      @include('frontend.member.profile.spiritual_backgrounds')
+    @endif
+
+    <!-- Life Style -->
+    @if(get_setting('member_life_style_section') == 'on')
+      @include('frontend.member.profile.lifestyle')
+    @endif
+    
     <!-- Present Address -->
     @php
         $present_address      = \App\Models\Address::where('type','present')->where('user_id',$member->id)->first();
@@ -105,20 +120,7 @@
       @include('frontend.member.profile.residency_information')
     @endif --}}
 
-    <!-- Social Background -->
-    @php
-        $member_religion_id   = !empty($member->spiritual_backgrounds->religion_id) ? $member->spiritual_backgrounds->religion_id : "";
-        $member_caste_id      = !empty($member->spiritual_backgrounds->caste_id) ? $member->spiritual_backgrounds->caste_id : "";
-        $member_sub_caste_id  = !empty($member->spiritual_backgrounds->sub_caste_id) ? $member->spiritual_backgrounds->sub_caste_id : "";
-    @endphp
-    @if(get_setting('member_spiritual_and_social_background_section') == 'on')
-      @include('frontend.member.profile.spiritual_backgrounds')
-    @endif
-
-    <!-- Life Style -->
-    @if(get_setting('member_life_style_section') == 'on')
-      @include('frontend.member.profile.lifestyle')
-    @endif
+   
 
     <!-- Astronomic Information  -->
     @if(get_setting('member_astronomic_information_section') == 'on')

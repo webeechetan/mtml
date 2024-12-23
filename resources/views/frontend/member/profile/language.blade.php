@@ -19,7 +19,7 @@
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <label for="drink">{{translate('Known Languages')}}</label>
+                    <label for="known_languages">{{translate('Known Languages')}}</label>
                     @php $known_languages = !empty($member->member->known_languages) ? json_decode($member->member->known_languages) : [] ; @endphp
                     <select class="form-control aiz-selectpicker" name="known_languages[]" data-live-search="true" multiple>
                         <option value="">{{translate('Select')}}</option>

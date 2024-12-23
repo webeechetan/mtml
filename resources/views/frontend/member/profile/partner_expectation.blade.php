@@ -228,6 +228,7 @@
                     <select class="form-control aiz-selectpicker" name="partner_diet" data-live-search="true" >
                         <option value="Veg" @if($user_partner_diet ==  'Veg') selected @endif >{{translate('Veg')}}</option>
                         <option value="Non-Veg" @if($user_partner_diet ==  'Non-Veg') selected @endif >{{translate('Non-Veg')}}</option>
+                        <option value="Does Not Matter" @if($user_partner_diet ==  'Does Not Matter ') selected @endif >{{translate('Does Not Matter')}}</option>
                         @error('partner_diet')
                             <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
