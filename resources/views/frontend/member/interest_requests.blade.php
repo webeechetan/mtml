@@ -52,10 +52,10 @@
                                 <td>{{ \Carbon\Carbon::parse($interested_by->member->birthday)->age }}</td>
                                 <td class="text-center">
                                     @if($interest->status != 1)
-                                        <a href="javascript:void(0);" onclick="accept_interest({{ $interest->id }})" class="btn btn-soft-success btn-icon btn-circle btn-sm" title="{{ translate('Accept') }}">
-                                            <i class="las la-check"></i>
+                                        <a href="javascript:void(0);" onclick="accept_interest({{ $interest->id }})" class="badge badge-inline badge-success" title="{{ translate('Accept') }}">
+                                        {{ translate('Accept') }}
                                         </a>
-                                        <a href="javascript:void(0);" onclick="reject_interest({{ $interest->id }})" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" title="{{ translate('Reject') }}">
+                                        <a style=" margin-left:5px" href="javascript:void(0);" onclick="reject_interest({{ $interest->id }})" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" title="{{ translate('Reject') }}">
                                             <i class="las la-trash"></i>
                                         </a>
                                     @else
