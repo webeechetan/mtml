@@ -176,11 +176,13 @@
                           {{translate('Select One')}}
                       </option>
                       @php
-                        $patti = ['Koru', 'Seli', 'Samalta', 'Bamtad', 'Maletha', 'Athgaon', 'Bantad', 'Bamtad',
-                                'Silgaon', 'Vishail', 'Pashgaon', 'Chandau', 'Udpalta', 'Siligothan', 'Bheladh', 'Lakhwad',
-                                'Siligothan', 'Fartad', 'Bharam', 'Magthadh', 'Ghanau', 'Mohana', 'Kaili', 'Bondar', 'Chhultad',
-                                'Bhondar', 'Taplad', 'Bislad', 'Dwar', 'Babar', 'Babar', 'Devdhar', 'Silgaon Babar', 'Other'];
-                      @endphp
+                      $patti = ['Koru', 'Seli', 'Samalta', 'Bamtad', 'Maletha', 'Athgaon', 'Bantad', 'Bamtad',
+                            'Silgaon', 'Vishail', 'Pashgaon', 'Chandau', 'Udpalta', 'Siligothan', 'Bheladh', 'Lakhwad',
+                            'Siligothan', 'Fartad', 'Bharam', 'Magthadh', 'Ghanau', 'Mohana', 'Kaili', 'Bondar', 'Chhultad',
+                            'Bhondar', 'Taplad', 'Bislad', 'Dwar', 'Babar', 'Babar', 'Devdhar', 'Silgaon-Babar', 'Bondur', 'Upalgaon', 
+                            'Mohankhat', 'Bana', 'Panjaon', 'Uparli', 'Athgaon', 'Rangeu', 'Dhunou', 'Vishlad', 'Bangaon', 'Buraswa', 
+                            'Kothi', 'Devghar', 'Bawar', 'Banadhar', 'Sheelgaon-bawar', 'Fanar', 'Mashk', 'Kailo', 'Haripur-kalsi', 'Maletha-guldar','Other'];
+                  @endphp
                         @foreach ($patti as $patti)
                             <option value="{{$patti}}"
                             @if(!empty($member->partner_expectations->patti) && $member->partner_expectations->patti == $patti)

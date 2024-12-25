@@ -695,7 +695,17 @@
         </section>
     @endif
 
-@endsection
+    <div class="d-flex flex-column align-items-center my-4">
+    <hr class="w-100">
+    <h2 class="text-center">How to Register on JaunsariShaadi</h2>
+    <iframe class="my-4 w-75" height="515" src="https://www.youtube.com/embed/n3qJtM928Rw?si=v4AaK26W9zsW8ari" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+</div>
+
+    @endsection
 
 @section('modal')
     @include('modals.login_modal')
