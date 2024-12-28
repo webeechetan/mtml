@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="age">Age</label>
-                    <input type="text" name="age" value="{{ !empty($member->partner_expectations->age) ? $member->partner_expectations->age : "" }}" class="form-control" placeholder="{{translate('Age')}}" >
+                    <input type="number" name="age" value="{{ !empty($member->partner_expectations->age) ? $member->partner_expectations->age : "" }}" class="form-control" placeholder="{{translate('Age')}}" >
                 </div>
                 {{-- <div class="col-md-6">
                     <label for="residence_country_id">{{translate('Residence Country')}}</label>
