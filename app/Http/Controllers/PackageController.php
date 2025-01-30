@@ -125,7 +125,7 @@ class PackageController extends Controller
     {
         $package = Package::findOrFail(decrypt($id));
         return view('admin.premium_packages.edit', compact('package'));
-    }
+    } 
 
     /**
      * Update the specified resource in storage.
@@ -209,7 +209,7 @@ class PackageController extends Controller
     }
 
     public function package_payemnt_methods($id)
-    {
+    { 
         $package = Package::where('id',decrypt($id))->first();
         return view('frontend.package.select_payemnt_method', compact('package'));
     }

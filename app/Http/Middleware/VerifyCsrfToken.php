@@ -16,6 +16,7 @@ class VerifyCsrfToken extends Middleware
         'aiz-uploader/upload',
         '/aiz-uploader',
         '/stripe*',
-        '/paytm*'
+        '/paytm*',
+        '/phonepe*'
     ];
 }

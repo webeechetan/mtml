@@ -80,7 +80,7 @@ Route::group(['middleware' => ['member']], function(){
 
     Route::get('/profile-settings', 'MemberController@profile_settings')->name('profile_settings');
     Route::get('/package-payment-methods/{id}', 'PackageController@package_payemnt_methods')->name('package_payment_methods');
-    Route::post('/package-payment','PackagePaymentController@store')->name('package.payment');
+    Route::post('/package-payment','PackagePaymentController@store')->name('package.payment'); 
 
     Route::get('/package-purchase-history', 'PackagePaymentController@package_purchase_history')->name('package_purchase_history');
 
@@ -193,6 +193,11 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 // Payment gateway Redirect
+
+// PhonePe
+Route::post('phonepe/callback', 'PhonePayController@success')->name('phonepay.success');
+
+
 
 //Paypal START
 Route::get('/paypal/payment/done', 'PaypalController@getDone')->name('payment.done');

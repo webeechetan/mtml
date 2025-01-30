@@ -11,6 +11,7 @@
         "php": "^7.3|^8.2.12",
         "anandsiddharth/laravel-paytm-wallet": "^2.0.0",
         "barryvdh/laravel-ide-helper": "^2.10",
+        "dipesh79/laravel-phonepe": "^1.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^7.3",

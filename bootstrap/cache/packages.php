@@ -35,6 +35,13 @@
       0 => 'BeyondCode\\DumpServer\\DumpServerServiceProvider',
     ),
   ),
+  'dipesh79/laravel-phonepe' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Dipesh79\\LaravelPhonePe\\LaravelPhonePeServiceProvider',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 

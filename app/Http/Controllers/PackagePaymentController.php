@@ -15,6 +15,9 @@ use App\User;
 use Auth;
 use Kutia\Larafirebase\Facades\Larafirebase;
 use Session;
+use App\Http\Controllers\PhonePayController;
+
+
 
 class PackagePaymentController extends Controller
 {
@@ -62,11 +65,15 @@ class PackagePaymentController extends Controller
 
         $request->session()->put('payment_type', 'package_payment');
         $request->session()->put('payment_data', $data);
-
+ 
         if ($request->payment_option == 'paypal') {
             $paypal = new PaypalController();
             return $paypal->pay();
-        } elseif ($request->payment_option == 'instamojo') {
+        }elseif ($request->payment_option == 'phone_pay') {
+            $phone_pay = new PhonePayController();
+            return $phone_pay->pay();
+        } 
+        elseif ($request->payment_option == 'instamojo') {
             $instamojo = new InstamojoController();
             return $instamojo->pay($request);
         } elseif ($request->payment_option == 'stripe') {

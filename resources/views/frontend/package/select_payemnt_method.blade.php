@@ -207,6 +207,18 @@
                                         </div>
                                         @endif
 
+                                        <div class="col-6 col-md-4">
+                                            <label class="aiz-megabox d-block mb-3">
+                                                <input value="phone_pay" class="online_payment" type="radio" name="payment_option">
+                                                <span class="d-block p-3 aiz-megabox-elem">
+                                                    <img src="{{ asset('assets/img/payment_method/paytm.png')}}" class="img-fluid mb-2">
+                                                    <span class="d-block text-center">
+                                                        <span class="d-block fw-600 fs-15">{{ translate('Phone PAy')}}</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
+
                                         @if(get_setting('wallet_system') == 1)
                                         <div class="col-6 col-md-4">
                                             <label class="aiz-megabox d-block mb-3">
